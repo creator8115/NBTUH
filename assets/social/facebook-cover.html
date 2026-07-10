@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Facebook Cover Source</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,480;0,9..144,560;1,9..144,420&family=Inter+Tight:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --parchment:#F6F1E7;
+    --parchment-2:#EFE8D8;
+    --forest-deep:#12241B;
+    --brass:#A9812E;
+    --brass-light:#D9B85B;
+    --display: "Fraunces", Georgia, serif;
+    --body: "Source Serif 4", Georgia, serif;
+    --ui: "Inter Tight", -apple-system, sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ width:820px; height:312px; overflow:hidden; }
+  body{
+    background: var(--forest-deep);
+    font-family: var(--body);
+    position:relative;
+  }
+  .frame{
+    position:absolute;
+    inset: 18px;
+    border: 1px solid rgba(217,184,90,0.3);
+  }
+  .mark{
+    position:absolute;
+    left: -40px;
+    top: -30px;
+    width: 520px;
+    height: 420px;
+    opacity: 0.55;
+  }
+  .content{
+    position:absolute;
+    right: 54px;
+    top: 0;
+    bottom: 0;
+    width: 460px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .eyebrow{
+    font-family: var(--ui);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass-light);
+    text-align:right;
+  }
+  h1{
+    font-family: var(--display);
+    font-weight: 540;
+    font-size: 40px;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--parchment);
+    text-align:right;
+    margin-top: 12px;
+  }
+  h1 em{
+    font-style: italic;
+    font-weight: 420;
+    color: var(--brass-light);
+  }
+  .rule{
+    width: 64px;
+    height: 2px;
+    background: var(--brass);
+    margin-top: 16px;
+    margin-bottom: 14px;
+    align-self:flex-end;
+  }
+  .tagline{
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--parchment-2);
+    text-align:right;
+  }
+</style>
+</head>
+<body>
+  <svg class="mark" viewBox="0 0 560 480" xmlns="http://www.w3.org/2000/svg">
+    <path d="M40 440 C 120 380, 140 300, 130 230" fill="none" stroke="#8FA396" stroke-width="1.5" opacity="0.4"/>
+    <path d="M40 440 C 100 360, 220 340, 260 250" fill="none" stroke="#8FA396" stroke-width="1.5" opacity="0.3"/>
+    <path d="M40 440 C 90 340, 260 320, 360 180" fill="none" stroke="#D9B85B" stroke-width="2.5"/>
+    <path d="M40 440 C 140 400, 300 380, 420 300" fill="none" stroke="#8FA396" stroke-width="1.5" opacity="0.3"/>
+    <path d="M40 440 C 160 420, 340 420, 470 380" fill="none" stroke="#8FA396" stroke-width="1.5" opacity="0.4"/>
+    <circle cx="40" cy="440" r="6" fill="#F6F1E7"/>
+    <circle cx="130" cy="230" r="4" fill="#8FA396"/>
+    <circle cx="260" cy="250" r="4" fill="#8FA396"/>
+    <circle cx="360" cy="180" r="6" fill="#D9B85B"/>
+    <circle cx="420" cy="300" r="4" fill="#8FA396"/>
+    <circle cx="470" cy="380" r="4" fill="#8FA396"/>
+  </svg>
+
+  <div class="content">
+    <span class="eyebrow">Judgment for decisions with no playbook</span>
+    <h1>Nobody Taught Us <em>How</em></h1>
+    <div class="rule"></div>
+    <p class="tagline">A field guide for career, capital, and the decisions in between.</p>
+  </div>
+
+  <div class="frame"></div>
+</body>
+</html>
