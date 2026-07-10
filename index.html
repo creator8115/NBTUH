@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nobody Taught Us How: Judgment for the decisions with no playbook</title>
+<meta name="description" content="Nobody Taught Us How helps ambitious people build the judgment for decisions that never came with instructions: in career, capital, and the parts of a life that shape everything after.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231F3D2E'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23F6F1E7' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,480;0,9..144,560;0,9..144,620;1,9..144,420;1,9..144,480&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#17211B;
+    --parchment:#F6F1E7;
+    --parchment-2:#EFE8D8;
+    --forest:#1F3D2E;
+    --forest-deep:#12241B;
+    --brass:#A9812E;
+    --brass-light:#D9B85B;
+    --line:#D8D2BF;
+    --line-dark:rgba(246,241,231,0.18);
+
+    --display: "Fraunces", Georgia, serif;
+    --body: "Source Serif 4", Georgia, serif;
+    --ui: "Inter Tight", -apple-system, sans-serif;
+
+    --s-1: 8px;
+    --s-2: 16px;
+    --s-3: 24px;
+    --s-4: 32px;
+    --s-5: 48px;
+    --s-6: 64px;
+    --s-7: 96px;
+    --s-8: 128px;
+
+    --container: 1240px;
+  }
+
+  *,*::before,*::after{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *,*::before,*::after{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  body{
+    margin:0;
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img,svg{ max-width:100%; display:block; }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 var(--s-5);
+  }
+  @media (max-width: 640px){
+    .wrap{ padding: 0 var(--s-3); }
+  }
+
+  /* ---------- Utility bar ---------- */
+  .utility{
+    background: var(--forest-deep);
+    color: var(--parchment-2);
+    font-family: var(--ui);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .utility .wrap{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: var(--s-3);
+  }
+  .utility span:last-child{ opacity: 0.7; }
+
+  /* ---------- Masthead ---------- */
+  header.masthead{
+    background: var(--parchment);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .masthead-inner{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding-top: var(--s-3);
+    padding-bottom: var(--s-3);
+    gap: var(--s-4);
+  }
+  .logotype{
+    font-family: var(--display);
+    font-weight: 560;
+    font-size: 1.5rem;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .logotype em{
+    font-style: italic;
+    font-weight: 420;
+    color: var(--forest);
+  }
+  nav.primary-nav{
+    display:flex;
+    align-items:center;
+    gap: var(--s-5);
+  }
+  nav.primary-nav ul{
+    list-style:none;
+    display:flex;
+    gap: var(--s-4);
+    margin:0; padding:0;
+  }
+  nav.primary-nav a{
+    font-family: var(--ui);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration:none;
+    color: var(--ink);
+    position:relative;
+    padding-bottom: 4px;
+  }
+  nav.primary-nav a::after{
+    content:"";
+    position:absolute;
+    left:0; right:100%;
+    bottom:0;
+    height:1.5px;
+    background: var(--brass);
+    transition: right 220ms ease;
+  }
+  nav.primary-nav a:hover::after,
+  nav.primary-nav a:focus-visible::after{ right:0; }
+
+  .btn{
+    display:inline-block;
+    font-family: var(--ui);
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.02em;
+    text-decoration:none;
+    padding: 12px 22px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+  }
+  .btn-primary{
+    background: var(--forest);
+    color: var(--parchment);
+  }
+  .btn-primary:hover{ background: var(--forest-deep); transform: translateY(-1px); }
+  .btn-primary:focus-visible{ outline: 2px solid var(--brass); outline-offset: 2px; }
+  .btn-ghost{
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .btn-ghost:hover{ background: var(--ink); color: var(--parchment); }
+
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+    width:44px; height:44px;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
+    gap:5px;
+  }
+  .nav-toggle span{
+    width:22px; height:2px; background: var(--ink); display:block;
+    transition: transform 200ms ease, opacity 200ms ease;
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 860px){
+    nav.primary-nav ul{ display:none; }
+    nav.primary-nav .btn-primary{ display:none; }
+    .nav-toggle{ display:flex; }
+    .mobile-panel{
+      display:none;
+      flex-direction:column;
+      gap: var(--s-3);
+      padding: var(--s-3) 0 var(--s-4);
+      border-top: 1px solid var(--line);
+    }
+    .mobile-panel.open{ display:flex; }
+    .mobile-panel a{
+      font-family: var(--ui);
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration:none;
+      color: var(--ink);
+      padding: 8px 0;
+    }
+    .mobile-panel a.btn-primary{
+      color: var(--parchment);
+      padding: 12px 22px;
+    }
+  }
+  @media (min-width: 861px){
+    .mobile-panel{ display:none; }
+  }
+
+  /* ---------- Eyebrow / rule components ---------- */
+  .eyebrow{
+    font-family: var(--ui);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+  .eyebrow.on-dark{ color: var(--brass-light); }
+
+  .rule{
+    border:none;
+    border-top: 1px solid var(--line);
+    margin: 0;
+  }
+  .rule.on-dark{ border-top-color: var(--line-dark); }
+
+  section{ padding: var(--s-8) 0; }
+  @media (max-width: 640px){
+    section{ padding: var(--s-6) 0; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding-top: var(--s-7);
+    padding-bottom: var(--s-7);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--s-7);
+    align-items:center;
+  }
+  .hero h1{
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 4.4vw + 0.6rem, 4.25rem);
+    line-height: 1.06;
+    letter-spacing: -0.015em;
+    margin: var(--s-3) 0 var(--s-4);
+  }
+  .hero .lede{
+    font-size: 1.25rem;
+    line-height: 1.6;
+    max-width: 46ch;
+    color: #33403A;
+    margin: 0 0 var(--s-4);
+  }
+  .hero .cta-row{
+    display:flex;
+    align-items:center;
+    gap: var(--s-4);
+    flex-wrap: wrap;
+  }
+  .hero .cta-row .micro{
+    font-family: var(--ui);
+    font-size: 0.85rem;
+    color: #5B6A62;
+  }
+
+  .hero-art{
+    position:relative;
+  }
+  .hero-art figcaption{
+    font-family: var(--ui);
+    font-size: 0.75rem;
+    color: #6B7A70;
+    text-align:right;
+    margin-top: var(--s-2);
+    letter-spacing: 0.03em;
+  }
+
+  @media (max-width: 900px){
+    .hero-grid{ grid-template-columns: 1fr; gap: var(--s-5); }
+    .hero-art{ order: -1; max-width: 420px; margin: 0 auto var(--s-2); }
+  }
+
+  /* ---------- Hero entrance animation ---------- */
+  @keyframes heroFadeUp{
+    from{ opacity:0; transform: translateY(16px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+  @keyframes drawPath{
+    to{ stroke-dashoffset:0; }
+  }
+  @keyframes dotIn{
+    from{ opacity:0; transform: scale(0.3); }
+    to{ opacity:1; transform: scale(1); }
+  }
+
+  .hero-copy > *{
+    opacity:0;
+    animation: heroFadeUp 800ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  }
+  .hero-copy > .eyebrow{ animation-delay: 60ms; }
+  .hero-copy > h1{ animation-delay: 180ms; }
+  .hero-copy > .lede{ animation-delay: 420ms; }
+  .hero-copy > .cta-row{ animation-delay: 560ms; }
+
+  .hero-art svg path{
+    stroke-dasharray: 650;
+    stroke-dashoffset: 650;
+    animation: drawPath 1200ms cubic-bezier(0.3, 0.6, 0.15, 1) forwards;
+  }
+  .hero-art svg path:nth-of-type(1){ animation-delay: 700ms; }
+  .hero-art svg path:nth-of-type(2){ animation-delay: 620ms; }
+  .hero-art svg path:nth-of-type(3){ animation-delay: 540ms; }
+  .hero-art svg path:nth-of-type(4){ animation-delay: 620ms; }
+  .hero-art svg path:nth-of-type(5){ animation-delay: 700ms; }
+
+  .hero-art svg circle{
+    opacity:0;
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: dotIn 380ms ease-out forwards;
+  }
+  .hero-art svg circle:nth-of-type(1){ animation-delay: 540ms; }
+  .hero-art svg circle:nth-of-type(2){ animation-delay: 1600ms; }
+  .hero-art svg circle:nth-of-type(3){ animation-delay: 1520ms; }
+  .hero-art svg circle:nth-of-type(4){ animation-delay: 1440ms; }
+  .hero-art svg circle:nth-of-type(5){ animation-delay: 1600ms; }
+  .hero-art svg circle:nth-of-type(6){ animation-delay: 1680ms; }
+
+  .hero-art svg line{
+    opacity:0;
+    animation: heroFadeUp 600ms ease-out forwards;
+    animation-delay: 1750ms;
+  }
+  .hero-art figcaption{
+    opacity:0;
+    animation: heroFadeUp 600ms ease-out forwards;
+    animation-delay: 1850ms;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .hero-copy > *, .hero-art svg path, .hero-art svg circle, .hero-art svg line, .hero-art figcaption{
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      stroke-dashoffset: 0 !important;
+    }
+  }
+
+  /* ---------- The Gap ---------- */
+  .gap-section{
+    background: var(--parchment);
+  }
+  .gap-grid{
+    display:grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: var(--s-6);
+  }
+  .gap-grid h2{
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(1.9rem, 2.4vw + 0.8rem, 2.6rem);
+    line-height: 1.12;
+    margin: var(--s-2) 0 0;
+  }
+  .gap-body p{ margin: 0 0 var(--s-3); }
+  .gap-body p:first-of-type::first-letter{
+    font-family: var(--display);
+    font-size: 3.6rem;
+    font-weight: 560;
+    float:left;
+    line-height: 0.8;
+    padding-right: 10px;
+    padding-top: 6px;
+    color: var(--forest);
+  }
+  @media (max-width: 860px){
+    .gap-grid{ grid-template-columns: 1fr; gap: var(--s-3); }
+  }
+
+  /* ---------- Method ---------- */
+  .method-section{
+    background: var(--parchment-2);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .method-head{
+    max-width: 60ch;
+    margin-bottom: var(--s-6);
+  }
+  .method-head h2{
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(1.9rem, 2.4vw + 0.8rem, 2.6rem);
+    margin: var(--s-2) 0 var(--s-2);
+  }
+  .method-list{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .method-item{
+    padding: var(--s-4) var(--s-3) var(--s-5) 0;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .method-item:nth-child(4){ border-right:none; padding-right:0; }
+  .method-item .num{
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--brass);
+    display:block;
+    margin-bottom: var(--s-3);
+  }
+  .method-item h3{
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1.35rem;
+    margin: 0 0 var(--s-2);
+    line-height: 1.2;
+  }
+  .method-item p{
+    font-size: 1rem;
+    color: #3C4A43;
+    margin:0;
+  }
+  @media (max-width: 900px){
+    .method-list{ grid-template-columns: 1fr 1fr; }
+    .method-item{ padding-right: var(--s-3); }
+    .method-item:nth-child(2n){ border-right:none; }
+  }
+  @media (max-width: 560px){
+    .method-list{ grid-template-columns: 1fr; }
+    .method-item{ border-right:none !important; }
+  }
+
+  /* ---------- Pull quote ---------- */
+  .quote-section{
+    background: var(--forest);
+    color: var(--parchment);
+  }
+  .quote-grid{
+    display:grid;
+    grid-template-columns: 0.15fr 1fr;
+    gap: var(--s-4);
+  }
+  blockquote{
+    margin:0;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 420;
+    font-size: clamp(1.6rem, 2.6vw + 0.8rem, 2.5rem);
+    line-height: 1.3;
+    max-width: 22ch;
+  }
+  .quote-mark{
+    font-family: var(--display);
+    font-size: 5rem;
+    line-height: 0.6;
+    color: var(--brass-light);
+    opacity: 0.85;
+  }
+  cite{
+    display:block;
+    font-style: normal;
+    font-family: var(--ui);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    color: var(--brass-light);
+    margin-top: var(--s-3);
+  }
+  @media (max-width: 700px){
+    .quote-grid{ grid-template-columns: 1fr; }
+    .quote-mark{ font-size: 3rem; }
+  }
+
+  /* ---------- Who it's for ---------- */
+  .forwhom-section{ background: var(--parchment); }
+  .forwhom-grid{
+    display:grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: var(--s-6);
+  }
+  .forwhom-head h2{
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(1.9rem, 2.4vw + 0.8rem, 2.6rem);
+    margin: var(--s-2) 0 0;
+    line-height: 1.15;
+  }
+  .index-list{ list-style:none; margin:0; padding:0; }
+  .index-list li{
+    display:flex;
+    gap: var(--s-4);
+    align-items: baseline;
+    padding: var(--s-3) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .index-list li:first-child{ border-top: 1px solid var(--line); }
+  .index-list .tag{
+    font-family: var(--ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--brass);
+    text-transform: uppercase;
+    flex: 0 0 96px;
+  }
+  .index-list .scenario{
+    font-family: var(--body);
+    font-size: 1.15rem;
+  }
+  @media (max-width: 860px){
+    .forwhom-grid{ grid-template-columns: 1fr; gap: var(--s-3); }
+    .index-list li{ flex-direction:column; gap: var(--s-1); }
+  }
+
+  /* ---------- Field notes ---------- */
+  .notes-section{
+    background: var(--parchment-2);
+    border-top: 1px solid var(--line);
+  }
+  .notes-head{
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    margin-bottom: var(--s-5);
+    gap: var(--s-3);
+    flex-wrap: wrap;
+  }
+  .notes-head h2{
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(1.9rem, 2.4vw + 0.8rem, 2.6rem);
+    margin: var(--s-2) 0 0;
+  }
+  .notes-head a{
+    font-family: var(--ui);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+    white-space:nowrap;
+  }
+  .notes-head a:hover{ color: var(--forest); border-color: var(--forest); }
+
+  .notes-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--s-5);
+  }
+  .note-card{
+    border-top: 3px solid var(--forest);
+    padding-top: var(--s-3);
+    display:flex;
+    flex-direction:column;
+    gap: var(--s-2);
+  }
+  .note-card h3{
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.25;
+    margin:0;
+  }
+  .note-card a{ text-decoration:none; color:inherit; }
+  .note-card a:hover h3{ color: var(--forest); }
+  .note-card .dek{
+    font-size: 1rem;
+    color: #3C4A43;
+    margin:0;
+  }
+  .note-card .meta{
+    font-family: var(--ui);
+    font-size: 0.8rem;
+    color: #6B7A70;
+    margin-top: var(--s-1);
+  }
+  @media (max-width: 900px){
+    .notes-grid{ grid-template-columns: 1fr; gap: var(--s-4); }
+  }
+
+  /* ---------- CTA ---------- */
+  .cta-section{
+    background: var(--forest-deep);
+    color: var(--parchment);
+  }
+  .cta-grid{
+    display:grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: var(--s-6);
+    align-items:center;
+  }
+  .cta-grid h2{
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(2rem, 2.8vw + 0.8rem, 2.8rem);
+    line-height: 1.12;
+    margin: var(--s-2) 0 var(--s-3);
+  }
+  .cta-grid p{
+    max-width: 48ch;
+    color: var(--parchment-2);
+    margin: 0 0 var(--s-4);
+  }
+  .cta-form{
+    display:flex;
+    flex-direction:column;
+    gap: var(--s-3);
+    border-left: 1px solid var(--line-dark);
+    padding-left: var(--s-5);
+  }
+  .cta-form label{
+    font-family: var(--ui);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--brass-light);
+    display:block;
+    margin-bottom: 6px;
+  }
+  .cta-form input, .cta-form textarea{
+    width:100%;
+    background: transparent;
+    border:none;
+    border-bottom: 1px solid var(--line-dark);
+    color: var(--parchment);
+    font-family: var(--body);
+    font-size: 1rem;
+    padding: 8px 2px;
+  }
+  .cta-form input::placeholder, .cta-form textarea::placeholder{ color: rgba(246,241,231,0.4); }
+  .cta-form input:focus, .cta-form textarea:focus{
+    outline:none;
+    border-bottom-color: var(--brass-light);
+  }
+  .field{ margin-bottom: var(--s-2); }
+  .cta-form .btn-primary{
+    background: var(--brass);
+    color: var(--forest-deep);
+    align-self:flex-start;
+    margin-top: var(--s-2);
+  }
+  .cta-form .btn-primary:hover{ background: var(--brass-light); }
+  @media (max-width: 860px){
+    .cta-grid{ grid-template-columns: 1fr; }
+    .cta-form{ border-left:none; padding-left:0; border-top: 1px solid var(--line-dark); padding-top: var(--s-4); }
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background: var(--forest-deep);
+    color: var(--parchment-2);
+    border-top: 1px solid var(--line-dark);
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns: 1.4fr 0.7fr 0.7fr 0.9fr;
+    gap: var(--s-5);
+    padding: var(--s-6) 0 var(--s-4);
+  }
+  .footer-brand .logotype{ color: var(--parchment); }
+  .footer-brand p{
+    font-size: 0.95rem;
+    max-width: 32ch;
+    color: rgba(246,241,231,0.65);
+    margin-top: var(--s-2);
+  }
+  footer h4{
+    font-family: var(--ui);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brass-light);
+    margin: 0 0 var(--s-3);
+  }
+  footer ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap: var(--s-2); }
+  footer a{ text-decoration:none; font-size: 0.95rem; color: rgba(246,241,231,0.82); }
+  footer a:hover{ color: var(--brass-light); }
+  .footer-bottom{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: var(--s-3) 0 var(--s-5);
+    border-top: 1px solid var(--line-dark);
+    font-family: var(--ui);
+    font-size: 0.8rem;
+    color: rgba(246,241,231,0.55);
+    flex-wrap: wrap;
+    gap: var(--s-2);
+  }
+  @media (max-width: 860px){
+    .footer-grid{ grid-template-columns: 1fr 1fr; }
+    .footer-brand{ grid-column: 1 / -1; }
+  }
+  @media (max-width: 560px){
+    .footer-grid{ grid-template-columns: 1fr; gap: var(--s-4); }
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform: translateY(16px);
+    transition: opacity 700ms ease, transform 700ms ease;
+  }
+  .reveal.is-visible{ opacity:1; transform: none; }
+
+  /* focus visibility globally */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline: 2px solid var(--brass);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="utility">
+  <div class="wrap">
+    <span>No. 01 · The No-Playbook Edition</span>
+    <span id="today-date">09 July 2026</span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a href="#top" class="logotype">Nobody Taught Us <em>How</em></a>
+    <nav class="primary-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#gap">The Thesis</a></li>
+        <li><a href="#method">The Method</a></li>
+        <li><a href="#forwhom">Who It's For</a></li>
+        <li><a href="#notes">Field Notes</a></li>
+      </ul>
+      <a href="#begin" class="btn btn-primary">Begin</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="wrap mobile-panel" id="mobilePanel">
+    <a href="#gap">The Thesis</a>
+    <a href="#method">The Method</a>
+    <a href="#forwhom">Who It's For</a>
+    <a href="#notes">Field Notes</a>
+    <a href="#begin" class="btn btn-primary" style="text-align:center;">Begin</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">On judgment, timing, and the decisions that shape a life</span>
+        <h1>The playbook was never written for the decisions that matter most.</h1>
+        <p class="lede">Nobody Taught Us How exists for the moments no syllabus covers: leaving the safe path, splitting the equity, taking the board seat, ending the partnership. We help ambitious people build the judgment those moments require.</p>
+        <div class="cta-row">
+          <a href="#begin" class="btn btn-primary">Request a working session</a>
+          <span class="micro">One decision at a time. No cohorts, no curriculum.</span>
+        </div>
+      </div>
+      <figure class="hero-art">
+        <svg viewBox="0 0 560 480" role="img" aria-labelledby="heroArtTitle">
+          <title id="heroArtTitle">An illustration of one origin point branching into several divergent paths, one path marked in gold as the chosen route</title>
+          <path d="M40 440 C 120 380, 140 300, 130 230" fill="none" stroke="#1F3D2E" stroke-width="1.5" opacity="0.55"/>
+          <path d="M40 440 C 100 360, 220 340, 260 250" fill="none" stroke="#1F3D2E" stroke-width="1.5" opacity="0.4"/>
+          <path d="M40 440 C 90 340, 260 320, 360 180" fill="none" stroke="#A9812E" stroke-width="2.5"/>
+          <path d="M40 440 C 140 400, 300 380, 420 300" fill="none" stroke="#1F3D2E" stroke-width="1.5" opacity="0.4"/>
+          <path d="M40 440 C 160 420, 340 420, 470 380" fill="none" stroke="#1F3D2E" stroke-width="1.5" opacity="0.55"/>
+          <circle cx="40" cy="440" r="6" fill="#17211B"/>
+          <circle cx="130" cy="230" r="4" fill="#1F3D2E"/>
+          <circle cx="260" cy="250" r="4" fill="#1F3D2E"/>
+          <circle cx="360" cy="180" r="6" fill="#A9812E"/>
+          <circle cx="420" cy="300" r="4" fill="#1F3D2E"/>
+          <circle cx="470" cy="380" r="4" fill="#1F3D2E"/>
+          <line x1="20" y1="460" x2="500" y2="460" stroke="#D8D2BF" stroke-width="1"/>
+        </svg>
+        <figcaption>Fig. 1. Every decision branches. Judgment is choosing before you can see the end of the path.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <!-- THE GAP -->
+  <section class="gap-section" id="gap">
+    <div class="wrap gap-grid reveal">
+      <div>
+        <span class="eyebrow">The gap</span>
+        <h2>School taught you calculus. No one taught you how to leave.</h2>
+      </div>
+      <div class="gap-body">
+        <p>Somewhere between graduation and the corner office, ambitious people run out of instructions. The technical skills keep compounding: the strategy frameworks, the modeling, the market fluency. But the decisions that actually determine the shape of a life arrive with no case study attached. Do you take the founder role or the safe promotion. Do you confront your co-founder or wait for the cap table to force the conversation. Do you say yes to the board seat that will consume every Sunday for three years.</p>
+        <p>These aren't questions of information. Most people deciding them are already the smartest person in the room. They're questions of judgment: how to weigh what can't be measured, how to move under real uncertainty, how to choose and then live inside the choice. Nobody taught us how. We think that's the actual curriculum missing from ambitious careers, and we built a practice around teaching it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section class="method-section" id="method">
+    <div class="wrap">
+      <div class="method-head reveal">
+        <span class="eyebrow">The method</span>
+        <h2>A discipline for deciding, built in four moves.</h2>
+      </div>
+      <div class="method-list reveal">
+        <div class="method-item">
+          <span class="num">01</span>
+          <h3>Frame the decision</h3>
+          <p>Separate what's reversible from what isn't. Most anxiety about a decision comes from treating a two-way door like a one-way one.</p>
+        </div>
+        <div class="method-item">
+          <span class="num">02</span>
+          <h3>Widen the aperture</h3>
+          <p>Surface the options you haven't let yourself consider: the third path between "stay" and "go" that ambition tends to hide from view.</p>
+        </div>
+        <div class="method-item">
+          <span class="num">03</span>
+          <h3>Price the trade-off</h3>
+          <p>Put a number, or at minimum a rank, on what you're giving up. Vague regret becomes a legible cost you can actually weigh.</p>
+        </div>
+        <div class="method-item">
+          <span class="num">04</span>
+          <h3>Decide on record</h3>
+          <p>Commit in writing, with a date to revisit it. A decision without a record is just a mood you'll have to have again.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PULL QUOTE -->
+  <section class="quote-section">
+    <div class="wrap quote-grid reveal">
+      <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+      <div>
+        <blockquote>Good judgment is a discipline, not a personality trait. It can be built, examined, and taught, which means the fact that nobody taught you is a solvable problem, not a permanent deficit.</blockquote>
+        <cite>The founding thesis of Nobody Taught Us How</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="forwhom-section" id="forwhom">
+    <div class="wrap forwhom-grid">
+      <div class="forwhom-head reveal">
+        <span class="eyebrow">Who it's for</span>
+        <h2>Five decisions we get called about most.</h2>
+      </div>
+      <ul class="index-list reveal">
+        <li>
+          <span class="tag">Career</span>
+          <span class="scenario">The operator deciding whether to leave a great job for an uncertain one.</span>
+        </li>
+        <li>
+          <span class="tag">Founding</span>
+          <span class="scenario">The co-founders splitting equity before the term sheet forces the conversation.</span>
+        </li>
+        <li>
+          <span class="tag">Leadership</span>
+          <span class="scenario">The executive choosing between two entirely different versions of a career.</span>
+        </li>
+        <li>
+          <span class="tag">Family</span>
+          <span class="scenario">The heir who inherited a succession plan they never actually agreed to.</span>
+        </li>
+        <li>
+          <span class="tag">Capital</span>
+          <span class="scenario">The partner deciding whether the merger is a marriage worth making.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FIELD NOTES -->
+  <section class="notes-section" id="notes">
+    <div class="wrap">
+      <div class="notes-head reveal">
+        <div>
+          <span class="eyebrow">Field notes</span>
+          <h2>Recent dispatches on judgment</h2>
+        </div>
+        <a href="#">All field notes &rarr;</a>
+      </div>
+      <div class="notes-grid reveal">
+        <article class="note-card">
+          <a href="#">
+            <h3>Why "follow your passion" is bad advice for a good decision</h3>
+            <p class="dek">Passion is a poor compass for irreversible choices. Here's what to consult instead.</p>
+            <p class="meta">Decision-Making · 6 min read</p>
+          </a>
+        </article>
+        <article class="note-card">
+          <a href="#">
+            <h3>The equity conversation nobody has before month three</h3>
+            <p class="dek">The founding split gets decided by momentum, not agreement, unless you interrupt it on purpose.</p>
+            <p class="meta">Founding · 8 min read</p>
+          </a>
+        </article>
+        <article class="note-card">
+          <a href="#">
+            <h3>How to leave a job you're not unhappy at</h3>
+            <p class="dek">The hardest exits are the ones with no villain, just a ceiling you can finally see.</p>
+            <p class="meta">Career · 5 min read</p>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="begin">
+    <div class="wrap cta-grid">
+      <div class="reveal">
+        <span class="eyebrow on-dark">Begin</span>
+        <h2>Bring us the decision you're circling.</h2>
+        <p>Not a webinar, not a cohort. A working session built around the actual decision in front of you. The offer, the exit, the partnership, the split. We help you frame it, price it, and decide.</p>
+      </div>
+      <form class="cta-form reveal" onsubmit="event.preventDefault(); this.querySelector('.btn-primary').textContent='Request received.';">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Jasmine Clark" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required>
+        </div>
+        <div class="field">
+          <label for="decision">The decision you're facing</label>
+          <textarea id="decision" name="decision" rows="3" placeholder="One or two sentences is plenty."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Request a working session</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="#top" class="logotype">Nobody Taught Us <em>How</em></a>
+      <p>Judgment for the decisions that never came with a playbook: in career, in capital, and in the parts of a life that shape everything after.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#gap">The Thesis</a></li>
+        <li><a href="#method">The Method</a></li>
+        <li><a href="#forwhom">Who It's For</a></li>
+        <li><a href="#notes">Field Notes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:hello@nobodytaughtushow.com">Email us</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Newsletter</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Begin</h4>
+      <ul>
+        <li><a href="#begin">Request a session</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>&copy; <span id="year">2026</span> Nobody Taught Us How.</span>
+    <span>Judgment, not just advice.</span>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const mobilePanel = document.getElementById('mobilePanel');
+  navToggle.addEventListener('click', () => {
+    const isOpen = mobilePanel.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  mobilePanel.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobilePanel.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Current date in utility bar
+  document.getElementById('today-date').textContent =
+    new Date().toLocaleDateString('en-US', { day: '2-digit', month: 'long', year: 'numeric' });
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Scroll reveal
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReduced && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>
