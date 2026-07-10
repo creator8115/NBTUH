@@ -661,6 +661,15 @@
     margin-top: var(--s-2);
   }
   .cta-form .btn-primary:hover{ background: var(--brass-light); }
+  .cta-form .btn-primary:disabled{ opacity: 0.6; cursor: not-allowed; }
+  .form-status{
+    font-family: var(--ui);
+    font-size: 0.85rem;
+    margin: var(--s-2) 0 0;
+    min-height: 1.2em;
+  }
+  .form-status.success{ color: var(--brass-light); }
+  .form-status.error{ color: #E3A5A5; }
   @media (max-width: 860px){
     .cta-grid{ grid-template-columns: 1fr; }
     .cta-form{ border-left:none; padding-left:0; border-top: 1px solid var(--line-dark); padding-top: var(--s-4); }
@@ -935,7 +944,7 @@
         <h2>Bring us the decision you're circling.</h2>
         <p>Not a webinar, not a cohort. A working session built around the actual decision in front of you. The offer, the exit, the partnership, the split. We help you frame it, price it, and decide.</p>
       </div>
-      <form class="cta-form reveal" onsubmit="event.preventDefault(); this.querySelector('.btn-primary').textContent='Request received.';">
+      <form class="cta-form reveal" id="ctaForm" action="https://formspree.io/f/xvzjezdz" method="POST">
         <div class="field">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Jasmine Clark" required>
@@ -949,6 +958,7 @@
           <textarea id="decision" name="decision" rows="3" placeholder="One or two sentences is plenty."></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Request a working session</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
@@ -974,7 +984,6 @@
       <h4>Connect</h4>
       <ul>
         <li><a href="mailto:support@nobodytaughtushow.com">Email us</a></li>
-        <li><a href="#">LinkedIn</a></li>
         <li><a href="#">Newsletter</a></li>
       </ul>
     </div>
@@ -1026,6 +1035,41 @@
   } else {
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
   }
+
+  // CTA form submission (Formspree)
+  const ctaForm = document.getElementById('ctaForm');
+  const ctaButton = ctaForm.querySelector('.btn-primary');
+  const ctaStatus = ctaForm.querySelector('.form-status');
+  const ctaButtonDefaultText = ctaButton.textContent;
+
+  ctaForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    ctaButton.disabled = true;
+    ctaButton.textContent = 'Sending...';
+    ctaStatus.textContent = '';
+    ctaStatus.className = 'form-status';
+
+    try {
+      const response = await fetch(ctaForm.action, {
+        method: 'POST',
+        body: new FormData(ctaForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        ctaButton.textContent = 'Request received.';
+        ctaStatus.textContent = "We'll reply within one business day.";
+        ctaStatus.classList.add('success');
+        ctaForm.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      ctaButton.disabled = false;
+      ctaButton.textContent = ctaButtonDefaultText;
+      ctaStatus.textContent = 'Something went wrong. Please email us directly instead.';
+      ctaStatus.classList.add('error');
+    }
+  });
 </script>
 
 </body>
