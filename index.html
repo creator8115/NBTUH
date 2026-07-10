@@ -9,239 +9,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,480;0,9..144,560;0,9..144,620;1,9..144,420;1,9..144,480&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 <style>
-  :root{
-    --ink:#17211B;
-    --parchment:#F6F1E7;
-    --parchment-2:#EFE8D8;
-    --forest:#1F3D2E;
-    --forest-deep:#12241B;
-    --brass:#A9812E;
-    --brass-light:#D9B85B;
-    --line:#D8D2BF;
-    --line-dark:rgba(246,241,231,0.18);
-
-    --display: "Fraunces", Georgia, serif;
-    --body: "Source Serif 4", Georgia, serif;
-    --ui: "Inter Tight", -apple-system, sans-serif;
-
-    --s-1: 8px;
-    --s-2: 16px;
-    --s-3: 24px;
-    --s-4: 32px;
-    --s-5: 48px;
-    --s-6: 64px;
-    --s-7: 96px;
-    --s-8: 128px;
-
-    --container: 1240px;
-  }
-
-  *,*::before,*::after{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior: auto; }
-    *,*::before,*::after{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
-  }
-
-  body{
-    margin:0;
-    background: var(--parchment);
-    color: var(--ink);
-    font-family: var(--body);
-    font-size: 18px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  img,svg{ max-width:100%; display:block; }
-
-  a{ color: inherit; }
-
-  .wrap{
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 var(--s-5);
-  }
-  @media (max-width: 640px){
-    .wrap{ padding: 0 var(--s-3); }
-  }
-
-  /* ---------- Utility bar ---------- */
-  .utility{
-    background: var(--forest-deep);
-    color: var(--parchment-2);
-    font-family: var(--ui);
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  .utility .wrap{
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    gap: var(--s-3);
-  }
-  .utility span:last-child{ opacity: 0.7; }
-
-  /* ---------- Masthead ---------- */
-  header.masthead{
-    background: var(--parchment);
-    border-bottom: 1px solid var(--line);
-    position: sticky;
-    top: 0;
-    z-index: 50;
-  }
-  .masthead-inner{
-    display:flex;
-    align-items:center;
-    justify-content: space-between;
-    padding-top: var(--s-3);
-    padding-bottom: var(--s-3);
-    gap: var(--s-4);
-  }
-  .logotype{
-    font-family: var(--display);
-    font-weight: 560;
-    font-size: 1.5rem;
-    letter-spacing: -0.01em;
-    white-space: nowrap;
-  }
-  .logotype em{
-    font-style: italic;
-    font-weight: 420;
-    color: var(--forest);
-  }
-  nav.primary-nav{
-    display:flex;
-    align-items:center;
-    gap: var(--s-5);
-  }
-  nav.primary-nav ul{
-    list-style:none;
-    display:flex;
-    gap: var(--s-4);
-    margin:0; padding:0;
-  }
-  nav.primary-nav a{
-    font-family: var(--ui);
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-decoration:none;
-    color: var(--ink);
-    position:relative;
-    padding-bottom: 4px;
-  }
-  nav.primary-nav a::after{
-    content:"";
-    position:absolute;
-    left:0; right:100%;
-    bottom:0;
-    height:1.5px;
-    background: var(--brass);
-    transition: right 220ms ease;
-  }
-  nav.primary-nav a:hover::after,
-  nav.primary-nav a:focus-visible::after{ right:0; }
-
-  .btn{
-    display:inline-block;
-    font-family: var(--ui);
-    font-weight: 600;
-    font-size: 0.875rem;
-    letter-spacing: 0.02em;
-    text-decoration:none;
-    padding: 12px 22px;
-    border-radius: 2px;
-    border: 1px solid transparent;
-    transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
-  }
-  .btn-primary{
-    background: var(--forest);
-    color: var(--parchment);
-  }
-  .btn-primary:hover{ background: var(--forest-deep); transform: translateY(-1px); }
-  .btn-primary:focus-visible{ outline: 2px solid var(--brass); outline-offset: 2px; }
-  .btn-ghost{
-    background: transparent;
-    color: var(--ink);
-    border-color: var(--ink);
-  }
-  .btn-ghost:hover{ background: var(--ink); color: var(--parchment); }
-
-  .nav-toggle{
-    display:none;
-    background:none;
-    border:none;
-    cursor:pointer;
-    width:44px; height:44px;
-    align-items:center;
-    justify-content:center;
-    flex-direction: column;
-    gap:5px;
-  }
-  .nav-toggle span{
-    width:22px; height:2px; background: var(--ink); display:block;
-    transition: transform 200ms ease, opacity 200ms ease;
-  }
-  .nav-toggle[aria-expanded="true"] span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
-  .nav-toggle[aria-expanded="true"] span:nth-child(2){ opacity:0; }
-  .nav-toggle[aria-expanded="true"] span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
-
-  @media (max-width: 860px){
-    nav.primary-nav ul{ display:none; }
-    nav.primary-nav .btn-primary{ display:none; }
-    .nav-toggle{ display:flex; }
-    .mobile-panel{
-      display:none;
-      flex-direction:column;
-      gap: var(--s-3);
-      padding: var(--s-3) 0 var(--s-4);
-      border-top: 1px solid var(--line);
-    }
-    .mobile-panel.open{ display:flex; }
-    .mobile-panel a{
-      font-family: var(--ui);
-      font-size: 1rem;
-      font-weight: 500;
-      text-decoration:none;
-      color: var(--ink);
-      padding: 8px 0;
-    }
-    .mobile-panel a.btn-primary{
-      color: var(--parchment);
-      padding: 12px 22px;
-    }
-  }
-  @media (min-width: 861px){
-    .mobile-panel{ display:none; }
-  }
-
-  /* ---------- Eyebrow / rule components ---------- */
-  .eyebrow{
-    font-family: var(--ui);
-    font-size: 0.8125rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--brass);
-  }
-  .eyebrow.on-dark{ color: var(--brass-light); }
-
-  .rule{
-    border:none;
-    border-top: 1px solid var(--line);
-    margin: 0;
-  }
-  .rule.on-dark{ border-top-color: var(--line-dark); }
-
-  section{ padding: var(--s-8) 0; }
-  @media (max-width: 640px){
-    section{ padding: var(--s-6) 0; }
-  }
-
   /* ---------- Hero ---------- */
   .hero{
     padding-top: var(--s-7);
@@ -452,46 +221,6 @@
     .method-item{ border-right:none !important; }
   }
 
-  /* ---------- Pull quote ---------- */
-  .quote-section{
-    background: var(--forest);
-    color: var(--parchment);
-  }
-  .quote-grid{
-    display:grid;
-    grid-template-columns: 0.15fr 1fr;
-    gap: var(--s-4);
-  }
-  blockquote{
-    margin:0;
-    font-family: var(--display);
-    font-style: italic;
-    font-weight: 420;
-    font-size: clamp(1.6rem, 2.6vw + 0.8rem, 2.5rem);
-    line-height: 1.3;
-    max-width: 22ch;
-  }
-  .quote-mark{
-    font-family: var(--display);
-    font-size: 5rem;
-    line-height: 0.6;
-    color: var(--brass-light);
-    opacity: 0.85;
-  }
-  cite{
-    display:block;
-    font-style: normal;
-    font-family: var(--ui);
-    font-size: 0.85rem;
-    letter-spacing: 0.04em;
-    color: var(--brass-light);
-    margin-top: var(--s-3);
-  }
-  @media (max-width: 700px){
-    .quote-grid{ grid-template-columns: 1fr; }
-    .quote-mark{ font-size: 3rem; }
-  }
-
   /* ---------- Who it's for ---------- */
   .forwhom-section{ background: var(--parchment); }
   .forwhom-grid{
@@ -537,66 +266,6 @@
   .notes-section{
     background: var(--parchment-2);
     border-top: 1px solid var(--line);
-  }
-  .notes-head{
-    display:flex;
-    justify-content: space-between;
-    align-items:flex-end;
-    margin-bottom: var(--s-5);
-    gap: var(--s-3);
-    flex-wrap: wrap;
-  }
-  .notes-head h2{
-    font-family: var(--display);
-    font-weight: 500;
-    font-size: clamp(1.9rem, 2.4vw + 0.8rem, 2.6rem);
-    margin: var(--s-2) 0 0;
-  }
-  .notes-head a{
-    font-family: var(--ui);
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-bottom: 1px solid var(--ink);
-    padding-bottom: 2px;
-    white-space:nowrap;
-  }
-  .notes-head a:hover{ color: var(--forest); border-color: var(--forest); }
-
-  .notes-grid{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--s-5);
-  }
-  .note-card{
-    border-top: 3px solid var(--forest);
-    padding-top: var(--s-3);
-    display:flex;
-    flex-direction:column;
-    gap: var(--s-2);
-  }
-  .note-card h3{
-    font-family: var(--display);
-    font-weight: 500;
-    font-size: 1.4rem;
-    line-height: 1.25;
-    margin:0;
-  }
-  .note-card a{ text-decoration:none; color:inherit; }
-  .note-card a:hover h3{ color: var(--forest); }
-  .note-card .dek{
-    font-size: 1rem;
-    color: #3C4A43;
-    margin:0;
-  }
-  .note-card .meta{
-    font-family: var(--ui);
-    font-size: 0.8rem;
-    color: #6B7A70;
-    margin-top: var(--s-1);
-  }
-  @media (max-width: 900px){
-    .notes-grid{ grid-template-columns: 1fr; gap: var(--s-4); }
   }
 
   /* ---------- CTA ---------- */
@@ -675,69 +344,6 @@
     .cta-form{ border-left:none; padding-left:0; border-top: 1px solid var(--line-dark); padding-top: var(--s-4); }
   }
 
-  /* ---------- Footer ---------- */
-  footer{
-    background: var(--forest-deep);
-    color: var(--parchment-2);
-    border-top: 1px solid var(--line-dark);
-  }
-  .footer-grid{
-    display:grid;
-    grid-template-columns: 1.4fr 0.7fr 0.7fr 0.9fr;
-    gap: var(--s-5);
-    padding: var(--s-6) 0 var(--s-4);
-  }
-  .footer-brand .logotype{ color: var(--parchment); }
-  .footer-brand p{
-    font-size: 0.95rem;
-    max-width: 32ch;
-    color: rgba(246,241,231,0.65);
-    margin-top: var(--s-2);
-  }
-  footer h4{
-    font-family: var(--ui);
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--brass-light);
-    margin: 0 0 var(--s-3);
-  }
-  footer ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap: var(--s-2); }
-  footer a{ text-decoration:none; font-size: 0.95rem; color: rgba(246,241,231,0.82); }
-  footer a:hover{ color: var(--brass-light); }
-  .footer-bottom{
-    display:flex;
-    justify-content: space-between;
-    align-items:center;
-    padding: var(--s-3) 0 var(--s-5);
-    border-top: 1px solid var(--line-dark);
-    font-family: var(--ui);
-    font-size: 0.8rem;
-    color: rgba(246,241,231,0.55);
-    flex-wrap: wrap;
-    gap: var(--s-2);
-  }
-  @media (max-width: 860px){
-    .footer-grid{ grid-template-columns: 1fr 1fr; }
-    .footer-brand{ grid-column: 1 / -1; }
-  }
-  @media (max-width: 560px){
-    .footer-grid{ grid-template-columns: 1fr; gap: var(--s-4); }
-  }
-
-  /* ---------- Reveal on scroll ---------- */
-  .reveal{
-    opacity:0;
-    transform: translateY(16px);
-    transition: opacity 700ms ease, transform 700ms ease;
-  }
-  .reveal.is-visible{ opacity:1; transform: none; }
-
-  /* focus visibility globally */
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
-    outline: 2px solid var(--brass);
-    outline-offset: 2px;
-  }
 </style>
 </head>
 <body>
@@ -908,25 +514,25 @@
           <span class="eyebrow">Field notes</span>
           <h2>Recent dispatches on judgment</h2>
         </div>
-        <a href="#">All field notes &rarr;</a>
+        <a href="field-notes/index.html">All field notes &rarr;</a>
       </div>
       <div class="notes-grid reveal">
         <article class="note-card">
-          <a href="#">
+          <a href="field-notes/passion-vs-judgment.html">
             <h3>Why "follow your passion" is bad advice for a good decision</h3>
             <p class="dek">Passion is a poor compass for irreversible choices. Here's what to consult instead.</p>
             <p class="meta">Decision-Making · 6 min read</p>
           </a>
         </article>
         <article class="note-card">
-          <a href="#">
+          <a href="field-notes/equity-conversation.html">
             <h3>The equity conversation nobody has before month three</h3>
             <p class="dek">The founding split gets decided by momentum, not agreement, unless you interrupt it on purpose.</p>
             <p class="meta">Founding · 8 min read</p>
           </a>
         </article>
         <article class="note-card">
-          <a href="#">
+          <a href="field-notes/leaving-a-job-youre-not-unhappy-at.html">
             <h3>How to leave a job you're not unhappy at</h3>
             <p class="dek">The hardest exits are the ones with no villain, just a ceiling you can finally see.</p>
             <p class="meta">Career · 5 min read</p>
@@ -1000,42 +606,8 @@
   </div>
 </footer>
 
+<script src="assets/site.js"></script>
 <script>
-  // Mobile nav toggle
-  const navToggle = document.getElementById('navToggle');
-  const mobilePanel = document.getElementById('mobilePanel');
-  navToggle.addEventListener('click', () => {
-    const isOpen = mobilePanel.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', isOpen);
-  });
-  mobilePanel.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      mobilePanel.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  // Current date in utility bar
-  document.getElementById('today-date').textContent =
-    new Date().toLocaleDateString('en-US', { day: '2-digit', month: 'long', year: 'numeric' });
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Scroll reveal
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!prefersReduced && 'IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  } else {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
-  }
-
   // CTA form submission (Formspree)
   const ctaForm = document.getElementById('ctaForm');
   const ctaButton = ctaForm.querySelector('.btn-primary');
