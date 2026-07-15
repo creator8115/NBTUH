@@ -3,654 +3,356 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nobody Taught Us How: Judgment for the decisions with no playbook</title>
-<meta name="description" content="Nobody Taught Us How helps ambitious people build the judgment for decisions that never came with instructions: in career, capital, and the parts of a life that shape everything after.">
+<title>Nobody Taught Us How: Modern Education for Ambitious People</title>
+<meta name="description" content="Practical frameworks for the decisions school, work, and life never prepared you for. Get The Four-Move Method, a free one-page decision framework.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://nobodytaughtushow.com/">
 <meta property="og:title" content="Nobody Taught Us How">
-<meta property="og:description" content="Judgment for the decisions that never came with a playbook: in career, in capital, and in the parts of a life that shape everything after.">
+<meta property="og:description" content="Practical frameworks for the decisions school, work, and life never prepared you for.">
 <meta property="og:image" content="https://nobodytaughtushow.com/assets/social/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Nobody Taught Us How">
-<meta name="twitter:description" content="Judgment for the decisions that never came with a playbook.">
+<meta name="twitter:description" content="Practical frameworks for the decisions school, work, and life never prepared you for.">
 <meta name="twitter:image" content="https://nobodytaughtushow.com/assets/social/og-image.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231F3D2E'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23F6F1E7' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,480;0,9..144,560;0,9..144,620;1,9..144,420;1,9..144,480&family=Source+Serif+4:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,420;0,9..144,480;0,9..144,560;0,9..144,620;1,9..144,420&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
 <style>
+  body{ font-family: var(--ui); }
+
+  /* ---------- Minimal header ---------- */
+  .lp-header{
+    padding: var(--s-4) 0;
+  }
+  .lp-header .wrap{
+    display:flex;
+    justify-content:center;
+  }
+
   /* ---------- Hero ---------- */
-  .hero{
-    padding-top: var(--s-7);
-    padding-bottom: var(--s-7);
-  }
-  .hero-grid{
-    display:grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: var(--s-7);
-    align-items:center;
-  }
-  .hero h1{
-    font-family: var(--display);
-    font-weight: 500;
-    font-size: clamp(2.4rem, 4.4vw + 0.6rem, 4.25rem);
-    line-height: 1.06;
-    letter-spacing: -0.015em;
-    margin: var(--s-3) 0 var(--s-4);
-  }
-  .hero .lede{
-    font-size: 1.25rem;
-    line-height: 1.6;
-    max-width: 46ch;
-    color: #33403A;
-    margin: 0 0 var(--s-4);
-  }
-  .hero .cta-row{
+  .lp-hero{
+    min-height: 86vh;
     display:flex;
     align-items:center;
-    gap: var(--s-4);
-    flex-wrap: wrap;
+    padding: var(--s-6) 0 var(--s-7);
   }
-  .hero .cta-row .micro{
-    font-family: var(--ui);
-    font-size: 0.85rem;
-    color: #5B6A62;
+  .lp-hero .wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
   }
-
-  .hero-art{
-    position:relative;
+  .lp-hero h1{
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 3.6vw + 1rem, 4rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    max-width: 16ch;
   }
-  .hero-art figcaption{
-    font-family: var(--ui);
-    font-size: 0.75rem;
-    color: #6B7A70;
-    text-align:right;
-    margin-top: var(--s-2);
-    letter-spacing: 0.03em;
+  .lp-subhead{
+    font-size: clamp(1.05rem, 0.6vw + 1rem, 1.25rem);
+    line-height: 1.6;
+    color: #3C4A43;
+    max-width: 46ch;
+    margin: var(--s-3) 0 var(--s-5);
   }
-
-  @media (max-width: 900px){
-    .hero-grid{ grid-template-columns: 1fr; gap: var(--s-5); }
-    .hero-art{ order: -1; max-width: 420px; margin: 0 auto var(--s-2); }
+  .lp-hero .btn-primary{
+    padding: 16px 32px;
+    font-size: 0.95rem;
   }
-
-  /* ---------- Hero entrance animation ---------- */
-  @keyframes heroFadeUp{
-    from{ opacity:0; transform: translateY(16px); }
+  .lp-hero .btn-primary:hover{
+    background: var(--brass);
+    color: var(--forest-deep);
+  }
+  .lp-hero-art{
+    margin-top: var(--s-7);
+    width: 100%;
+    max-width: 360px;
+    opacity: 0;
+    animation: lpFadeUp 900ms ease-out 300ms forwards;
+  }
+  @keyframes lpFadeUp{
+    from{ opacity:0; transform: translateY(14px); }
     to{ opacity:1; transform: translateY(0); }
   }
-  @keyframes drawPath{
-    to{ stroke-dashoffset:0; }
-  }
-  @keyframes dotIn{
-    from{ opacity:0; transform: scale(0.3); }
-    to{ opacity:1; transform: scale(1); }
-  }
-
-  .hero-copy > *{
-    opacity:0;
-    animation: heroFadeUp 800ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
-  }
-  .hero-copy > .eyebrow{ animation-delay: 60ms; }
-  .hero-copy > h1{ animation-delay: 180ms; }
-  .hero-copy > .lede{ animation-delay: 420ms; }
-  .hero-copy > .cta-row{ animation-delay: 560ms; }
-
-  .hero-art svg path{
+  .lp-hero-art svg path{
     stroke-dasharray: 650;
     stroke-dashoffset: 650;
-    animation: drawPath 1200ms cubic-bezier(0.3, 0.6, 0.15, 1) forwards;
+    animation: lpDraw 1400ms cubic-bezier(0.3,0.6,0.15,1) 500ms forwards;
   }
-  .hero-art svg path:nth-of-type(1){ animation-delay: 700ms; }
-  .hero-art svg path:nth-of-type(2){ animation-delay: 620ms; }
-  .hero-art svg path:nth-of-type(3){ animation-delay: 540ms; }
-  .hero-art svg path:nth-of-type(4){ animation-delay: 620ms; }
-  .hero-art svg path:nth-of-type(5){ animation-delay: 700ms; }
+  @keyframes lpDraw{ to{ stroke-dashoffset:0; } }
 
-  .hero-art svg circle{
-    opacity:0;
-    transform-origin: center;
-    transform-box: fill-box;
-    animation: dotIn 380ms ease-out forwards;
+  /* ---------- Featured Framework card ---------- */
+  .lp-framework{
+    padding: var(--s-7) 0;
   }
-  .hero-art svg circle:nth-of-type(1){ animation-delay: 540ms; }
-  .hero-art svg circle:nth-of-type(2){ animation-delay: 1600ms; }
-  .hero-art svg circle:nth-of-type(3){ animation-delay: 1520ms; }
-  .hero-art svg circle:nth-of-type(4){ animation-delay: 1440ms; }
-  .hero-art svg circle:nth-of-type(5){ animation-delay: 1600ms; }
-  .hero-art svg circle:nth-of-type(6){ animation-delay: 1680ms; }
-
-  .hero-art svg line{
-    opacity:0;
-    animation: heroFadeUp 600ms ease-out forwards;
-    animation-delay: 1750ms;
-  }
-  .hero-art figcaption{
-    opacity:0;
-    animation: heroFadeUp 600ms ease-out forwards;
-    animation-delay: 1850ms;
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    .hero-copy > *, .hero-art svg path, .hero-art svg circle, .hero-art svg line, .hero-art figcaption{
-      animation: none !important;
-      opacity: 1 !important;
-      transform: none !important;
-      stroke-dashoffset: 0 !important;
-    }
-  }
-
-  /* ---------- The Gap ---------- */
-  .gap-section{
-    background: var(--parchment);
-  }
-  .gap-grid{
-    display:grid;
-    grid-template-columns: 0.7fr 1.3fr;
-    gap: var(--s-6);
-  }
-  .gap-grid h2{
-    font-family: var(--display);
-    font-weight: 500;
-    font-size: clamp(1.9rem, 2.4vw + 0.8rem, 2.6rem);
-    line-height: 1.12;
-    margin: var(--s-2) 0 0;
-  }
-  .gap-body p{ margin: 0 0 var(--s-3); }
-  .gap-body p:first-of-type::first-letter{
-    font-family: var(--display);
-    font-size: 3.6rem;
-    font-weight: 560;
-    float:left;
-    line-height: 0.8;
-    padding-right: 10px;
-    padding-top: 6px;
-    color: var(--forest);
-  }
-  @media (max-width: 860px){
-    .gap-grid{ grid-template-columns: 1fr; gap: var(--s-3); }
-  }
-
-  /* ---------- Method ---------- */
-  .method-section{
+  .lp-framework-card{
+    max-width: 640px;
+    margin: 0 auto;
+    text-align:center;
     background: var(--parchment-2);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--forest);
+    padding: var(--s-6) var(--s-5);
   }
-  .method-head{
-    max-width: 60ch;
-    margin-bottom: var(--s-6);
-  }
-  .method-head h2{
-    font-family: var(--display);
-    font-weight: 500;
-    font-size: clamp(1.9rem, 2.4vw + 0.8rem, 2.6rem);
-    margin: var(--s-2) 0 var(--s-2);
-  }
-  .method-list{
-    display:grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    border-top: 1px solid var(--line);
-  }
-  .method-item{
-    padding: var(--s-4) var(--s-3) var(--s-5) 0;
-    border-right: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-  .method-item:nth-child(4){ border-right:none; padding-right:0; }
-  .method-item .num{
-    font-family: var(--display);
-    font-style: italic;
-    font-size: 1.1rem;
-    color: var(--brass);
-    display:block;
-    margin-bottom: var(--s-3);
-  }
-  .method-item h3{
-    font-family: var(--display);
-    font-weight: 500;
-    font-size: 1.35rem;
-    margin: 0 0 var(--s-2);
-    line-height: 1.2;
-  }
-  .method-item p{
-    font-size: 1rem;
-    color: #3C4A43;
-    margin:0;
-  }
-  @media (max-width: 900px){
-    .method-list{ grid-template-columns: 1fr 1fr; }
-    .method-item{ padding-right: var(--s-3); }
-    .method-item:nth-child(2n){ border-right:none; }
-  }
-  @media (max-width: 560px){
-    .method-list{ grid-template-columns: 1fr; }
-    .method-item{ border-right:none !important; }
-  }
-
-  /* ---------- Who it's for ---------- */
-  .forwhom-section{ background: var(--parchment); }
-  .forwhom-grid{
-    display:grid;
-    grid-template-columns: 0.7fr 1.3fr;
-    gap: var(--s-6);
-  }
-  .forwhom-head h2{
-    font-family: var(--display);
-    font-weight: 500;
-    font-size: clamp(1.9rem, 2.4vw + 0.8rem, 2.6rem);
-    margin: var(--s-2) 0 0;
-    line-height: 1.15;
-  }
-  .index-list{ list-style:none; margin:0; padding:0; }
-  .index-list li{
-    display:flex;
-    gap: var(--s-4);
-    align-items: baseline;
-    padding: var(--s-3) 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .index-list li:first-child{ border-top: 1px solid var(--line); }
-  .index-list .tag{
+  .lp-tag{
     font-family: var(--ui);
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 0.08em;
-    color: var(--brass);
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    flex: 0 0 96px;
+    color: #5B6A62;
   }
-  .index-list .scenario{
-    font-family: var(--body);
-    font-size: 1.15rem;
+  .lp-framework-card h2{
+    font-family: var(--display);
+    font-weight: 540;
+    font-size: clamp(1.7rem, 1.8vw + 1rem, 2.2rem);
+    color: var(--ink);
+    margin: var(--s-2) 0 var(--s-3);
   }
-  @media (max-width: 860px){
-    .forwhom-grid{ grid-template-columns: 1fr; gap: var(--s-3); }
-    .index-list li{ flex-direction:column; gap: var(--s-1); }
+  .lp-framework-card p{
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #3C4A43;
+    max-width: 42ch;
+    margin: 0 auto var(--s-4);
+  }
+  .lp-secondary-link{
+    display:inline-block;
+    font-family: var(--ui);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration:none;
+    color: var(--forest);
+    border-bottom: 1px solid var(--forest);
+    padding-bottom: 2px;
+    transition: color 180ms ease, border-color 180ms ease;
+  }
+  .lp-secondary-link:hover{ color: var(--brass); border-color: var(--brass); }
+
+  /* ---------- Credibility ---------- */
+  .lp-credibility{
+    padding: var(--s-6) 0;
+  }
+  .lp-credibility .wrap{
+    max-width: 620px;
+    text-align:center;
+  }
+  .lp-credibility p{
+    font-size: 1.05rem;
+    line-height: 1.65;
+    color: #4A564F;
   }
 
-  /* ---------- Field notes ---------- */
-  .notes-section{
-    background: var(--parchment-2);
-    border-top: 1px solid var(--line);
-  }
-
-  /* ---------- CTA ---------- */
-  .cta-section{
+  /* ---------- Email capture ---------- */
+  .lp-capture{
+    padding: var(--s-7) 0 var(--s-8);
     background: var(--forest-deep);
     color: var(--parchment);
   }
-  .cta-grid{
-    display:grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: var(--s-6);
-    align-items:center;
+  .lp-capture .wrap{
+    max-width: 560px;
+    text-align:center;
   }
-  .cta-grid h2{
+  .lp-capture h2{
     font-family: var(--display);
-    font-weight: 500;
-    font-size: clamp(2rem, 2.8vw + 0.8rem, 2.8rem);
-    line-height: 1.12;
-    margin: var(--s-2) 0 var(--s-3);
+    font-weight: 540;
+    font-size: clamp(1.9rem, 2vw + 1rem, 2.5rem);
+    margin: 0 0 var(--s-3);
   }
-  .cta-grid p{
-    max-width: 48ch;
+  .lp-capture > .wrap > p{
+    font-size: 1.05rem;
+    line-height: 1.6;
     color: var(--parchment-2);
-    margin: 0 0 var(--s-4);
+    margin: 0 0 var(--s-5);
   }
-  .cta-form{
+  .lp-capture-form{
     display:flex;
-    flex-direction:column;
-    gap: var(--s-3);
-    border-left: 1px solid var(--line-dark);
-    padding-left: var(--s-5);
+    gap: var(--s-2);
+    justify-content:center;
+    flex-wrap: wrap;
   }
-  .cta-form label{
-    font-family: var(--ui);
-    font-size: 0.8rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--brass-light);
-    display:block;
-    margin-bottom: 6px;
-  }
-  .cta-form input, .cta-form textarea{
-    width:100%;
+  .lp-capture-form input[type="email"]{
+    flex: 1 1 280px;
+    min-width:0;
+    max-width: 340px;
+    padding: 14px 16px;
+    border: 1px solid var(--line-dark);
     background: transparent;
-    border:none;
-    border-bottom: 1px solid var(--line-dark);
     color: var(--parchment);
-    font-family: var(--body);
+    font-family: var(--ui);
     font-size: 1rem;
-    padding: 8px 2px;
+    border-radius: 2px;
   }
-  .cta-form input::placeholder, .cta-form textarea::placeholder{ color: rgba(246,241,231,0.4); }
-  .cta-form input:focus, .cta-form textarea:focus{
-    outline:none;
-    border-bottom-color: var(--brass-light);
-  }
-  .field{ margin-bottom: var(--s-2); }
-  .cta-form .btn-primary{
+  .lp-capture-form input[type="email"]::placeholder{ color: rgba(246,241,231,0.45); }
+  .lp-capture-form input[type="email"]:focus-visible{ outline: 2px solid var(--brass); outline-offset: 2px; }
+  .lp-capture-form .btn-primary{
     background: var(--brass);
     color: var(--forest-deep);
-    align-self:flex-start;
-    margin-top: var(--s-2);
+    padding: 14px 28px;
   }
-  .cta-form .btn-primary:hover{ background: var(--brass-light); }
-  .cta-form .btn-primary:disabled{ opacity: 0.6; cursor: not-allowed; }
-  .form-status{
+  .lp-capture-form .btn-primary:hover{ background: var(--brass-light); }
+  .lp-capture-form .btn-primary:disabled{ opacity:0.6; cursor:not-allowed; }
+  .lp-capture-status{
     font-family: var(--ui);
     font-size: 0.85rem;
-    margin: var(--s-2) 0 0;
+    margin: var(--s-3) 0 0;
     min-height: 1.2em;
   }
-  .form-status.success{ color: var(--brass-light); }
-  .form-status.error{ color: #E3A5A5; }
-  @media (max-width: 860px){
-    .cta-grid{ grid-template-columns: 1fr; }
-    .cta-form{ border-left:none; padding-left:0; border-top: 1px solid var(--line-dark); padding-top: var(--s-4); }
+  .lp-capture-status.success{ color: var(--brass-light); }
+  .lp-capture-status.error{ color: #E3A5A5; }
+  .lp-download-link{
+    display:inline-block;
+    margin-top: var(--s-3);
+    font-family: var(--ui);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--brass-light);
+    text-decoration:none;
+    border-bottom: 1px solid var(--brass-light);
+    padding-bottom: 2px;
+  }
+  .lp-download-link:hover{ color: var(--parchment); border-color: var(--parchment); }
+  .lp-download-link[hidden]{ display:none; }
+
+  @media (max-width: 560px){
+    .lp-capture-form{ flex-direction: column; }
+    .lp-capture-form input[type="email"]{ max-width: none; }
   }
 
+  /* ---------- Minimal footer ---------- */
+  .lp-footer{
+    padding: var(--s-5) 0;
+    background: var(--forest-deep);
+    border-top: 1px solid var(--line-dark);
+  }
+  .lp-footer .wrap{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap: var(--s-2);
+    text-align:center;
+  }
+  .lp-footer .logotype{ color: var(--parchment); font-size: 1.15rem; }
+  .lp-footer-note{
+    font-family: var(--ui);
+    font-size: 0.85rem;
+    color: rgba(246,241,231,0.55);
+  }
 </style>
 </head>
 <body>
 
-<div class="utility">
+<header class="lp-header">
   <div class="wrap">
-    <span>No. 01 · The No-Playbook Edition</span>
-    <span id="today-date">09 July 2026</span>
-  </div>
-</div>
-
-<header class="masthead">
-  <div class="wrap masthead-inner">
     <a href="#top" class="logotype">Nobody Taught Us <em>How</em></a>
-    <nav class="primary-nav" aria-label="Primary">
-      <ul>
-        <li><a href="#gap">The Thesis</a></li>
-        <li><a href="#method">The Method</a></li>
-        <li><a href="#forwhom">Who It's For</a></li>
-        <li><a href="#notes">Field Notes</a></li>
-      </ul>
-      <a href="#begin" class="btn btn-primary">Begin</a>
-    </nav>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" id="navToggle">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="wrap mobile-panel" id="mobilePanel">
-    <a href="#gap">The Thesis</a>
-    <a href="#method">The Method</a>
-    <a href="#forwhom">Who It's For</a>
-    <a href="#notes">Field Notes</a>
-    <a href="#begin" class="btn btn-primary" style="text-align:center;">Begin</a>
   </div>
 </header>
 
 <main id="top">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow">On judgment, timing, and the decisions that shape a life</span>
-        <h1>The playbook was never written for the decisions that matter most.</h1>
-        <p class="lede">Nobody Taught Us How exists for the moments no syllabus covers: leaving the safe path, splitting the equity, taking the board seat, ending the partnership. We help ambitious people build the judgment those moments require.</p>
-        <div class="cta-row">
-          <a href="#begin" class="btn btn-primary">Request a working session</a>
-          <span class="micro">One decision at a time. No cohorts, no curriculum.</span>
-        </div>
-      </div>
-      <figure class="hero-art">
-        <svg viewBox="0 0 560 480" role="img" aria-labelledby="heroArtTitle">
-          <title id="heroArtTitle">An illustration of one origin point branching into several divergent paths, one path marked in gold as the chosen route</title>
-          <path d="M40 440 C 120 380, 140 300, 130 230" fill="none" stroke="#1F3D2E" stroke-width="1.5" opacity="0.55"/>
-          <path d="M40 440 C 100 360, 220 340, 260 250" fill="none" stroke="#1F3D2E" stroke-width="1.5" opacity="0.4"/>
-          <path d="M40 440 C 90 340, 260 320, 360 180" fill="none" stroke="#A9812E" stroke-width="2.5"/>
-          <path d="M40 440 C 140 400, 300 380, 420 300" fill="none" stroke="#1F3D2E" stroke-width="1.5" opacity="0.4"/>
-          <path d="M40 440 C 160 420, 340 420, 470 380" fill="none" stroke="#1F3D2E" stroke-width="1.5" opacity="0.55"/>
-          <circle cx="40" cy="440" r="6" fill="#17211B"/>
-          <circle cx="130" cy="230" r="4" fill="#1F3D2E"/>
-          <circle cx="260" cy="250" r="4" fill="#1F3D2E"/>
-          <circle cx="360" cy="180" r="6" fill="#A9812E"/>
-          <circle cx="420" cy="300" r="4" fill="#1F3D2E"/>
-          <circle cx="470" cy="380" r="4" fill="#1F3D2E"/>
-          <line x1="20" y1="460" x2="500" y2="460" stroke="#D8D2BF" stroke-width="1"/>
+  <section class="lp-hero">
+    <div class="wrap">
+      <h1>Modern education for ambitious people building what's next.</h1>
+      <p class="lp-subhead">Practical frameworks for the decisions school, work, and life never prepared you for.</p>
+      <a href="#get-framework" class="btn btn-primary">Get the Framework</a>
+
+      <figure class="lp-hero-art">
+        <svg viewBox="0 0 560 300" role="img" aria-labelledby="lpArtTitle">
+          <title id="lpArtTitle">An illustration of one origin point branching into several divergent paths, one path marked in gold as the chosen route</title>
+          <path d="M40 260 C 120 200, 140 120, 130 60" fill="none" stroke="#1F3D2E" stroke-width="1.5" opacity="0.4"/>
+          <path d="M40 260 C 90 160, 260 140, 360 30" fill="none" stroke="#A9812E" stroke-width="2.5"/>
+          <path d="M40 260 C 160 240, 340 240, 470 200" fill="none" stroke="#1F3D2E" stroke-width="1.5" opacity="0.4"/>
+          <circle cx="40" cy="260" r="5" fill="#17211B"/>
+          <circle cx="360" cy="30" r="5" fill="#A9812E"/>
+          <circle cx="470" cy="200" r="3.5" fill="#1F3D2E"/>
+          <circle cx="130" cy="60" r="3.5" fill="#1F3D2E"/>
         </svg>
-        <figcaption>Fig. 1. Every decision branches. Judgment is choosing before you can see the end of the path.</figcaption>
       </figure>
     </div>
   </section>
 
-  <hr class="rule">
-
-  <!-- THE GAP -->
-  <section class="gap-section" id="gap">
-    <div class="wrap gap-grid reveal">
-      <div>
-        <span class="eyebrow">The gap</span>
-        <h2>School taught you calculus. No one taught you how to leave.</h2>
-      </div>
-      <div class="gap-body">
-        <p>Somewhere between graduation and the corner office, ambitious people run out of instructions. The technical skills keep compounding: the strategy frameworks, the modeling, the market fluency. But the decisions that actually determine the shape of a life arrive with no case study attached. Do you take the founder role or the safe promotion. Do you confront your co-founder or wait for the cap table to force the conversation. Do you say yes to the board seat that will consume every Sunday for three years.</p>
-        <p>These aren't questions of information. Most people deciding them are already the smartest person in the room. They're questions of judgment: how to weigh what can't be measured, how to move under real uncertainty, how to choose and then live inside the choice. Nobody taught us how. We think that's the actual curriculum missing from ambitious careers, and we built a practice around teaching it.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- METHOD -->
-  <section class="method-section" id="method">
+  <section class="lp-framework">
     <div class="wrap">
-      <div class="method-head reveal">
-        <span class="eyebrow">The method</span>
-        <h2>A discipline for deciding, built in four moves.</h2>
-      </div>
-      <div class="method-list reveal">
-        <div class="method-item">
-          <span class="num">01</span>
-          <h3>Frame the decision</h3>
-          <p>Separate what's reversible from what isn't. Most anxiety about a decision comes from treating a two-way door like a one-way one.</p>
-        </div>
-        <div class="method-item">
-          <span class="num">02</span>
-          <h3>Widen the aperture</h3>
-          <p>Surface the options you haven't let yourself consider: the third path between "stay" and "go" that ambition tends to hide from view.</p>
-        </div>
-        <div class="method-item">
-          <span class="num">03</span>
-          <h3>Price the trade-off</h3>
-          <p>Put a number, or at minimum a rank, on what you're giving up. Vague regret becomes a legible cost you can actually weigh.</p>
-        </div>
-        <div class="method-item">
-          <span class="num">04</span>
-          <h3>Decide on record</h3>
-          <p>Commit in writing, with a date to revisit it. A decision without a record is just a mood you'll have to have again.</p>
-        </div>
+      <div class="lp-framework-card">
+        <span class="lp-tag">5 min read &middot; Free</span>
+        <h2>The Four-Move Method</h2>
+        <p>A one-page framework for the decisions that don't come with a case study: the offer, the partnership, the expansion, the exit.</p>
+        <a href="#get-framework" class="lp-secondary-link">Get the Framework &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- PULL QUOTE -->
-  <section class="quote-section">
-    <div class="wrap quote-grid reveal">
-      <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-      <div>
-        <blockquote>Good judgment is a discipline, not a personality trait. It can be built, examined, and taught, which means the fact that nobody taught you is a solvable problem, not a permanent deficit.</blockquote>
-        <cite>The founding thesis of Nobody Taught Us How</cite>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHO IT'S FOR -->
-  <section class="forwhom-section" id="forwhom">
-    <div class="wrap forwhom-grid">
-      <div class="forwhom-head reveal">
-        <span class="eyebrow">Who it's for</span>
-        <h2>Five decisions we get called about most.</h2>
-      </div>
-      <ul class="index-list reveal">
-        <li>
-          <span class="tag">Career</span>
-          <span class="scenario">The operator deciding whether to leave a great job for an uncertain one.</span>
-        </li>
-        <li>
-          <span class="tag">Founding</span>
-          <span class="scenario">The co-founders splitting equity before the term sheet forces the conversation.</span>
-        </li>
-        <li>
-          <span class="tag">Leadership</span>
-          <span class="scenario">The executive choosing between two entirely different versions of a career.</span>
-        </li>
-        <li>
-          <span class="tag">Family</span>
-          <span class="scenario">The heir who inherited a succession plan they never actually agreed to.</span>
-        </li>
-        <li>
-          <span class="tag">Capital</span>
-          <span class="scenario">The partner deciding whether the merger is a marriage worth making.</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- FIELD NOTES -->
-  <section class="notes-section" id="notes">
+  <section class="lp-credibility">
     <div class="wrap">
-      <div class="notes-head reveal">
-        <div>
-          <span class="eyebrow">Field notes</span>
-          <h2>Recent dispatches on judgment</h2>
-        </div>
-        <a href="field-notes/index.html">All field notes &rarr;</a>
-      </div>
-      <div class="notes-grid reveal">
-        <article class="note-card">
-          <a href="field-notes/passion-vs-judgment.html">
-            <h3>Why "follow your passion" is bad advice for a good decision</h3>
-            <p class="dek">Passion is a poor compass for irreversible choices. Here's what to consult instead.</p>
-            <p class="meta">Decision-Making · 6 min read</p>
-          </a>
-        </article>
-        <article class="note-card">
-          <a href="field-notes/equity-conversation.html">
-            <h3>The equity conversation nobody has before month three</h3>
-            <p class="dek">The founding split gets decided by momentum, not agreement, unless you interrupt it on purpose.</p>
-            <p class="meta">Founding · 8 min read</p>
-          </a>
-        </article>
-        <article class="note-card">
-          <a href="field-notes/leaving-a-job-youre-not-unhappy-at.html">
-            <h3>How to leave a job you're not unhappy at</h3>
-            <p class="dek">The hardest exits are the ones with no villain, just a ceiling you can finally see.</p>
-            <p class="meta">Career · 5 min read</p>
-          </a>
-        </article>
-      </div>
+      <p>This isn't theory. It's built on an MBA, a finance career that moved from the public sector into private finance, time inside a Chicago unicorn startup, and a track record that includes a Teach For America fellowship and business relationships built from scratch across three relocations.</p>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section" id="begin">
-    <div class="wrap cta-grid">
-      <div class="reveal">
-        <span class="eyebrow on-dark">Begin</span>
-        <h2>Bring us the decision you're circling.</h2>
-        <p>Not a webinar, not a cohort. A working session built around the actual decision in front of you. The offer, the exit, the partnership, the split. We help you frame it, price it, and decide.</p>
-      </div>
-      <form class="cta-form reveal" id="ctaForm" action="https://formspree.io/f/xvzjezdz" method="POST">
-        <div class="field">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Jasmine Clark" required>
-        </div>
-        <div class="field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="you@company.com" required>
-        </div>
-        <div class="field">
-          <label for="decision">The decision you're facing</label>
-          <textarea id="decision" name="decision" rows="3" placeholder="One or two sentences is plenty."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Request a working session</button>
-        <p class="form-status" role="status" aria-live="polite"></p>
+  <section class="lp-capture" id="get-framework">
+    <div class="wrap">
+      <h2>Get the Framework</h2>
+      <p>Enter your email. The Four-Move Method opens immediately, free.</p>
+      <form class="lp-capture-form" id="captureForm" action="https://formspree.io/f/xzdlndqo" method="POST">
+        <input type="email" name="email" placeholder="you@company.com" required aria-label="Email address">
+        <button type="submit" class="btn btn-primary">Get the Framework</button>
       </form>
+      <p class="lp-capture-status" id="captureStatus" role="status" aria-live="polite"></p>
+      <a href="assets/downloads/four-move-method.pdf" download class="lp-download-link" id="downloadLink" hidden>Download The Four-Move Method (PDF) &darr;</a>
     </div>
   </section>
 
 </main>
 
-<footer>
-  <div class="wrap footer-grid">
-    <div class="footer-brand">
-      <a href="#top" class="logotype">Nobody Taught Us <em>How</em></a>
-      <p>Judgment for the decisions that never came with a playbook: in career, in capital, and in the parts of a life that shape everything after.</p>
-    </div>
-    <div>
-      <h4>Explore</h4>
-      <ul>
-        <li><a href="#gap">The Thesis</a></li>
-        <li><a href="#method">The Method</a></li>
-        <li><a href="#forwhom">Who It's For</a></li>
-        <li><a href="#notes">Field Notes</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="mailto:support@nobodytaughtushow.com">Email us</a></li>
-        <li><a href="#">Newsletter</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>Begin</h4>
-      <ul>
-        <li><a href="#begin">Request a session</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="wrap footer-bottom">
-    <span>&copy; <span id="year">2026</span> Nobody Taught Us How.</span>
-    <span>Judgment, not just advice.</span>
+<footer class="lp-footer">
+  <div class="wrap">
+    <span class="logotype">Nobody Taught Us <em>How</em></span>
+    <span class="lp-footer-note">More on the way.</span>
   </div>
 </footer>
 
 <script src="assets/site.js"></script>
 <script>
-  // CTA form submission (Formspree)
-  const ctaForm = document.getElementById('ctaForm');
-  const ctaButton = ctaForm.querySelector('.btn-primary');
-  const ctaStatus = ctaForm.querySelector('.form-status');
-  const ctaButtonDefaultText = ctaButton.textContent;
+  const captureForm = document.getElementById('captureForm');
+  const captureStatus = document.getElementById('captureStatus');
+  const downloadLink = document.getElementById('downloadLink');
+  const captureButton = captureForm.querySelector('.btn-primary');
+  const captureButtonDefaultText = captureButton.textContent;
 
-  ctaForm.addEventListener('submit', async (event) => {
+  captureForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    ctaButton.disabled = true;
-    ctaButton.textContent = 'Sending...';
-    ctaStatus.textContent = '';
-    ctaStatus.className = 'form-status';
+    captureButton.disabled = true;
+    captureButton.textContent = 'Sending...';
+    captureStatus.textContent = '';
+    captureStatus.className = 'lp-capture-status';
 
     try {
-      const response = await fetch(ctaForm.action, {
+      const response = await fetch(captureForm.action, {
         method: 'POST',
-        body: new FormData(ctaForm),
+        body: new FormData(captureForm),
         headers: { 'Accept': 'application/json' }
       });
       if (response.ok) {
-        ctaButton.textContent = 'Request received.';
-        ctaStatus.textContent = "We'll reply within one business day.";
-        ctaStatus.classList.add('success');
-        ctaForm.reset();
+        captureButton.textContent = 'Sent.';
+        captureStatus.textContent = 'Your download is ready below.';
+        captureStatus.classList.add('success');
+        downloadLink.hidden = false;
+        downloadLink.click();
+        captureForm.reset();
       } else {
-        throw new Error('Form submission failed');
+        throw new Error('Submission failed');
       }
     } catch (err) {
-      ctaButton.disabled = false;
-      ctaButton.textContent = ctaButtonDefaultText;
-      ctaStatus.textContent = 'Something went wrong. Please email us directly instead.';
-      ctaStatus.classList.add('error');
+      captureButton.disabled = false;
+      captureButton.textContent = captureButtonDefaultText;
+      captureStatus.textContent = 'Something went wrong. Please try again or email us directly.';
+      captureStatus.classList.add('error');
     }
   });
 </script>

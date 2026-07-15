@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Four-Move Method</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,480;0,9..144,560;0,9..144,620;1,9..144,420&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  @page{ size: 8.5in 11in; margin: 0; }
+  :root{
+    --ink:#17211B;
+    --parchment:#F6F1E7;
+    --forest:#1F3D2E;
+    --forest-deep:#12241B;
+    --brass:#A9812E;
+    --line:#D8D2BF;
+    --display: "Fraunces", Georgia, serif;
+    --ui: "Inter Tight", -apple-system, sans-serif;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ width:8.5in; height:11in; }
+  body{
+    background: var(--parchment);
+    color: var(--ink);
+    font-family: var(--ui);
+    position:relative;
+  }
+  .sheet{
+    padding: 0.7in 0.85in;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+  }
+  .frame{
+    position:absolute;
+    inset: 0.32in;
+    border: 1px solid var(--line);
+    pointer-events:none;
+  }
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    padding-bottom: 0.2in;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 0.34in;
+  }
+  .brand{
+    font-family: var(--display);
+    font-weight: 560;
+    font-size: 17px;
+    letter-spacing: -0.01em;
+  }
+  .brand em{ font-style: italic; font-weight: 420; color: var(--brass); }
+  .edition{
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6B7A70;
+  }
+  .eyebrow{
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    display:block;
+  }
+  h1{
+    font-family: var(--display);
+    font-weight: 560;
+    font-size: 36px;
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    color: var(--forest-deep);
+    margin: 10px 0 12px;
+  }
+  .dek{
+    font-size: 14px;
+    line-height: 1.6;
+    color: #33403A;
+    max-width: 5.7in;
+    margin-bottom: 0.36in;
+  }
+  .moves{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3in 0.4in;
+  }
+  .move{
+    border-top: 2px solid var(--forest);
+    padding-top: 12px;
+  }
+  .move .num{
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--brass);
+    display:block;
+    margin-bottom: 8px;
+  }
+  .move h2{
+    font-family: var(--display);
+    font-weight: 560;
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--forest-deep);
+    margin-bottom: 8px;
+  }
+  .move p{
+    font-size: 12.5px;
+    line-height: 1.58;
+    color: #33403A;
+  }
+  .howto{
+    margin-top: 0.36in;
+    padding-top: 0.26in;
+    border-top: 1px solid var(--line);
+  }
+  .howto .eyebrow{ margin-bottom: 8px; }
+  .howto p{
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #33403A;
+    max-width: 5.9in;
+  }
+  footer{
+    position:absolute;
+    left: 0.85in;
+    right: 0.85in;
+    bottom: 0.55in;
+    display:flex;
+    justify-content:space-between;
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    font-size: 10.5px;
+    color: #5B6A62;
+  }
+  footer .site{ color: var(--forest); font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <header>
+      <span class="brand">Nobody Taught Us <em>How</em></span>
+      <span class="edition">The No-Playbook Edition</span>
+    </header>
+
+    <span class="eyebrow">A working framework</span>
+    <h1>The Four-Move Method</h1>
+    <p class="dek">A discipline for deciding, built in four moves. Use it whenever a decision is expensive to get wrong and there's no case study to consult: the offer, the partnership, the expansion, the exit.</p>
+
+    <div class="moves">
+      <div class="move">
+        <span class="num">01</span>
+        <h2>Frame the decision</h2>
+        <p>Separate what's reversible from what isn't. Most anxiety about a decision comes from treating a two-way door like a one-way one. Name which kind you're actually facing before you do anything else.</p>
+      </div>
+      <div class="move">
+        <span class="num">02</span>
+        <h2>Widen the aperture</h2>
+        <p>Surface the options you haven't let yourself consider: the third path between "stay" and "go" that ambition tends to hide from view. Write down at least one option you've been avoiding.</p>
+      </div>
+      <div class="move">
+        <span class="num">03</span>
+        <h2>Price the trade-off</h2>
+        <p>Put a number, or at minimum a rank, on what you're giving up. Vague regret becomes a legible cost you can actually weigh against what you stand to gain.</p>
+      </div>
+      <div class="move">
+        <span class="num">04</span>
+        <h2>Decide on record</h2>
+        <p>Commit in writing, with a date to revisit it. A decision without a record is just a mood you'll have to have again. Put a line in your calendar to check your own work.</p>
+      </div>
+    </div>
+
+    <div class="howto">
+      <span class="eyebrow">How to use it</span>
+      <p>Work through the four moves in order, in writing, before you decide. Most people skip straight to move three, pricing a trade-off they haven't actually framed or widened first, which is why the same decision keeps resurfacing. Ten honest minutes with this page will tell you more than another week of thinking about it.</p>
+    </div>
+
+    <div class="frame"></div>
+
+    <footer>
+      <span class="site">nobodytaughtushow.com</span>
+      <span>Judgment, not just advice.</span>
+    </footer>
+  </div>
+</body>
+</html>
