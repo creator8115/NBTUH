@@ -70,23 +70,38 @@
     background: var(--brass);
     color: var(--forest-deep);
   }
-  .lp-hero-art{
-    margin-top: var(--s-7);
-    width: 100%;
-    max-width: 360px;
-    opacity: 0;
-    animation: lpFadeUp 900ms ease-out 300ms forwards;
+
+  /* ---------- ICP callout ---------- */
+  .lp-icp{
+    padding: var(--s-6) 0;
   }
-  @keyframes lpFadeUp{
-    from{ opacity:0; transform: translateY(14px); }
-    to{ opacity:1; transform: translateY(0); }
+  .lp-icp .wrap{
+    max-width: 640px;
+    text-align:center;
   }
-  .lp-hero-art svg path{
-    stroke-dasharray: 650;
-    stroke-dashoffset: 650;
-    animation: lpDraw 1400ms cubic-bezier(0.3,0.6,0.15,1) 500ms forwards;
+  .lp-icp h2{
+    font-family: var(--display);
+    font-weight: 540;
+    font-size: clamp(1.6rem, 1.8vw + 1rem, 2rem);
+    color: var(--ink);
+    margin-bottom: var(--s-5);
   }
-  @keyframes lpDraw{ to{ stroke-dashoffset:0; } }
+  .lp-icp-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:left;
+  }
+  .lp-icp-list li{
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #3C4A43;
+    padding: var(--s-3) 0;
+    border-top: 1px solid var(--line);
+  }
+  .lp-icp-list li:last-child{
+    border-bottom: 1px solid var(--line);
+  }
 
   /* ---------- Featured Framework card ---------- */
   .lp-framework{
@@ -100,6 +115,30 @@
     border: 1px solid var(--line);
     border-top: 3px solid var(--forest);
     padding: var(--s-6) var(--s-5);
+  }
+  .lp-workbook-preview{
+    position:relative;
+    width: 220px;
+    height: 285px;
+    margin: 0 auto var(--s-5);
+  }
+  .lp-workbook-page{
+    position:absolute;
+    top:0; left:0;
+    width: 220px;
+    height: 285px;
+    object-fit: cover;
+    object-position: top;
+    border: 1px solid var(--line);
+    box-shadow: 0 10px 28px rgba(23,33,27,0.14);
+  }
+  .lp-workbook-page-back{
+    transform: rotate(6deg) translate(10px, 4px);
+    z-index:1;
+  }
+  .lp-workbook-page-front{
+    transform: rotate(-4deg);
+    z-index:2;
   }
   .lp-tag{
     font-family: var(--ui);
@@ -154,8 +193,15 @@
     height: 96px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0 auto var(--s-3);
+    margin: 0 auto var(--s-2);
     border: 2px solid var(--line);
+  }
+  .lp-credibility-name{
+    font-family: var(--display);
+    font-weight: 560;
+    font-size: 1.05rem;
+    color: var(--ink);
+    margin-bottom: var(--s-2);
   }
 
   /* ---------- Email capture ---------- */
@@ -272,25 +318,27 @@
       <h1>The system that turns visitors into clients.</h1>
       <p class="lp-subhead">A free framework for why people find your page and never reach out, and what to fix first.</p>
       <a href="#get-framework" class="btn btn-primary">Get the Framework</a>
+    </div>
+  </section>
 
-      <figure class="lp-hero-art">
-        <svg viewBox="0 0 560 300" role="img" aria-labelledby="lpArtTitle">
-          <title id="lpArtTitle">An illustration of one origin point branching into several divergent paths, one path marked in gold as the chosen route</title>
-          <path d="M40 260 C 120 200, 140 120, 130 60" fill="none" stroke="#1F3D2E" stroke-width="1.5" opacity="0.4"/>
-          <path d="M40 260 C 90 160, 260 140, 360 30" fill="none" stroke="#A9812E" stroke-width="2.5"/>
-          <path d="M40 260 C 160 240, 340 240, 470 200" fill="none" stroke="#1F3D2E" stroke-width="1.5" opacity="0.4"/>
-          <circle cx="40" cy="260" r="5" fill="#17211B"/>
-          <circle cx="360" cy="30" r="5" fill="#A9812E"/>
-          <circle cx="470" cy="200" r="3.5" fill="#1F3D2E"/>
-          <circle cx="130" cy="60" r="3.5" fill="#1F3D2E"/>
-        </svg>
-      </figure>
+  <section class="lp-icp">
+    <div class="wrap">
+      <h2>This is for you if:</h2>
+      <ul class="lp-icp-list">
+        <li>Your page gets visits, but the contact form stays quiet.</li>
+        <li>You've built a following, but it hasn't turned into consistent clients.</li>
+        <li>You suspect the problem isn't your price or your offer, but something about how you're being remembered.</li>
+      </ul>
     </div>
   </section>
 
   <section class="lp-framework">
     <div class="wrap">
       <div class="lp-framework-card">
+        <div class="lp-workbook-preview">
+          <img src="assets/images/workbook-preview-2.png" alt="" class="lp-workbook-page lp-workbook-page-back" aria-hidden="true">
+          <img src="assets/images/workbook-preview-1.png" alt="Preview of the first page of The Memorable Business Framework workbook" class="lp-workbook-page lp-workbook-page-front">
+        </div>
         <span class="lp-tag">Workbook included &middot; Free</span>
         <h2>The Memorable Business Framework</h2>
         <p>Why people visit your page but never contact you.</p>
@@ -301,8 +349,9 @@
 
   <section class="lp-credibility">
     <div class="wrap">
-      <img src="assets/images/founder.jpg" alt="Photo of the founder of Nobody Taught Us How" class="lp-credibility-photo">
-      <p>Grew to 7,100+ followers organically, and turned that attention into real, paying clients.</p>
+      <img src="assets/images/founder.jpg" alt="Photo of Jasmine Clark, founder of Nobody Taught Us How" class="lp-credibility-photo">
+      <p class="lp-credibility-name">Jasmine Clark</p>
+      <p>Grew to 10,000+ followers organically across platforms, and turned that attention into real, paying clients.</p>
     </div>
   </section>
 
