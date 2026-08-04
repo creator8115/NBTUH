@@ -7,9 +7,16 @@ export function GuideCard({ guide }: { guide: Guide }) {
       href={`/guides/${guide.slug}/`}
       className="group flex flex-col border-t-2 border-forest pt-5 transition-opacity hover:opacity-80"
     >
-      <span className="text-xs font-semibold uppercase tracking-[0.1em] text-ink/50">
-        {guide.category}
-      </span>
+      <div className="flex items-center justify-between">
+        <span className="text-xs font-semibold uppercase tracking-[0.1em] text-ink/50">
+          {guide.category}
+        </span>
+        {!guide.gumroadUrl && (
+          <span className="text-[10px] font-semibold uppercase tracking-[0.08em] text-brass">
+            Coming Soon
+          </span>
+        )}
+      </div>
       <h3 className="mt-2 font-display text-xl font-medium text-ink">
         {guide.title}
       </h3>

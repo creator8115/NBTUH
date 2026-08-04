@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Button } from "@/components/ui/button";
 import { GuidePreviewMock } from "@/components/guide-preview-mock";
+import { NotifyForm } from "@/components/notify-form";
 import { guides, getGuideBySlug } from "@/data/guides";
 
 export function generateStaticParams() {
@@ -49,8 +50,12 @@ export default async function GuideDetailPage({
             <span aria-hidden="true">&middot;</span>
             <span>{guide.difficulty}</span>
           </div>
-          <div className="mt-8">
-            <Button href={guide.gumroadUrl}>Open on Gumroad</Button>
+          <div className="mt-8 max-w-sm">
+            {guide.gumroadUrl ? (
+              <Button href={guide.gumroadUrl}>Open on Gumroad</Button>
+            ) : (
+              <NotifyForm guideTitle={guide.title} guideSlug={guide.slug} />
+            )}
           </div>
         </Container>
       </section>
@@ -109,9 +114,16 @@ export default async function GuideDetailPage({
                   ))}
                 </ul>
                 <div className="mt-6">
-                  <Button href={guide.gumroadUrl} className="w-full">
-                    Open on Gumroad
-                  </Button>
+                  {guide.gumroadUrl ? (
+                    <Button href={guide.gumroadUrl} className="w-full">
+                      Open on Gumroad
+                    </Button>
+                  ) : (
+                    <NotifyForm
+                      guideTitle={guide.title}
+                      guideSlug={guide.slug}
+                    />
+                  )}
                 </div>
               </div>
             </aside>

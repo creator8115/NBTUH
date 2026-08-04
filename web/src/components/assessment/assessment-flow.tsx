@@ -6,6 +6,7 @@ import { questions } from "@/data/questions";
 import { recommendGuide, type Answers } from "@/lib/assessment";
 import { Button } from "@/components/ui/button";
 import { Eyebrow } from "@/components/ui/eyebrow";
+import { NotifyForm } from "@/components/notify-form";
 
 type Stage = "intro" | "question" | "results";
 
@@ -191,11 +192,26 @@ function ResultsScreen({
           ))}
         </ul>
 
-        <div className="mt-8 flex flex-wrap items-center gap-4">
-          <Button href={guide.gumroadUrl}>Open Working Guide</Button>
-          <Button href={`/guides/${guide.slug}/`} variant="ghost">
-            See full guide details
-          </Button>
+        <div className="mt-8 flex flex-col gap-4">
+          {guide.gumroadUrl ? (
+            <div className="flex flex-wrap items-center gap-4">
+              <Button href={guide.gumroadUrl}>Open Working Guide</Button>
+              <Button href={`/guides/${guide.slug}/`} variant="ghost">
+                See full guide details
+              </Button>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-3">
+              <NotifyForm guideTitle={guide.title} guideSlug={guide.slug} />
+              <Button
+                href={`/guides/${guide.slug}/`}
+                variant="ghost"
+                className="self-start"
+              >
+                See full guide details
+              </Button>
+            </div>
+          )}
         </div>
       </div>
 

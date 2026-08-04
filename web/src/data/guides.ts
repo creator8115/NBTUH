@@ -14,7 +14,8 @@ export type Guide = {
   whatYoullComplete: string;
   whatYoullLeaveWith: string[];
   faqs: { question: string; answer: string }[];
-  gumroadUrl: string;
+  /** null means the guide isn't live on Gumroad yet; show a notify-me form instead. */
+  gumroadUrl: string | null;
 };
 
 export const guides: Guide[] = [
@@ -56,7 +57,7 @@ export const guides: Guide[] = [
           "It gives you a defensible floor and a target, not a single magic number. The final call on positioning is still yours.",
       },
     ],
-    gumroadUrl: "https://gumroad.com/nobodytaughtushow",
+    gumroadUrl: "https://nobodytaughtushow.gumroad.com/l/dxyuha",
   },
   {
     slug: "what-do-i-even-say",
@@ -90,7 +91,7 @@ export const guides: Guide[] = [
         answer: "Yes. The framework is channel-agnostic; the examples cover both.",
       },
     ],
-    gumroadUrl: "https://gumroad.com/nobodytaughtushow",
+    gumroadUrl: "https://nobodytaughtushow.gumroad.com/l/basxk",
   },
   {
     slug: "is-my-marketing-actually-working",
@@ -125,7 +126,7 @@ export const guides: Guide[] = [
           "No. It's built around memory and simple questions, not dashboards.",
       },
     ],
-    gumroadUrl: "https://gumroad.com/nobodytaughtushow",
+    gumroadUrl: null,
   },
   {
     slug: "can-i-afford-to-hire",
@@ -159,7 +160,7 @@ export const guides: Guide[] = [
           "The worksheet uses your trailing average and your worst recent month, not just your best one.",
       },
     ],
-    gumroadUrl: "https://gumroad.com/nobodytaughtushow",
+    gumroadUrl: null,
   },
   {
     slug: "what-should-i-focus-on-next",
@@ -189,7 +190,7 @@ export const guides: Guide[] = [
           "No, deliberately not. It's one sorting exercise, meant to be fast and repeatable, not a system to maintain.",
       },
     ],
-    gumroadUrl: "https://gumroad.com/nobodytaughtushow",
+    gumroadUrl: null,
   },
   {
     slug: "do-i-actually-know-my-numbers",
@@ -219,7 +220,7 @@ export const guides: Guide[] = [
           "It helps but isn't required. The snapshot works from bank statements and invoices too.",
       },
     ],
-    gumroadUrl: "https://gumroad.com/nobodytaughtushow",
+    gumroadUrl: null,
   },
 ];
 
