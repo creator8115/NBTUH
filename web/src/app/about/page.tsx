@@ -38,6 +38,16 @@ export default function AboutPage() {
               America fellowship and business relationships built from
               scratch across three relocations.
             </p>
+            <ul className="mt-4 flex flex-col gap-1.5 border-t border-line pt-4 text-sm text-ink/70">
+              <li>
+                2026 Side Hustle Honors Industry Honoree, Future of Work &amp;
+                Business Services
+              </li>
+              <li>
+                2026 Side Hustle Honors Community Choice, Second Act
+                Entrepreneur
+              </li>
+            </ul>
           </div>
         </div>
 
