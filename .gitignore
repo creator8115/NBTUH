@@ -1,2 +1,9 @@
 .DS_Store
 .claude/settings.local.json
+
+# Next.js source project (in /web) - build artifacts, not committed
+web/node_modules
+web/.next
+web/out
+web/next-env.d.ts
+web/*.tsbuildinfo
