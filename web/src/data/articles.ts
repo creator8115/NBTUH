@@ -52,9 +52,9 @@ export const articles: Article[] = [
     ],
   },
   {
-    slug: "networking-isnt-the-hard-part",
-    title: "Networking isn't the hard part. Following up is.",
-    dek: "The ownership split gets decided by momentum, not agreement, unless you interrupt it on purpose.",
+    slug: "the-ownership-split-nobody-wants-to-have",
+    title: "The ownership split nobody wants to have",
+    dek: "The split gets decided by momentum, not agreement, unless you interrupt it on purpose.",
     category: "Founding",
     readTime: "8 min read",
     relatedGuideSlug: "do-i-actually-know-my-numbers",
