@@ -26,7 +26,7 @@ export const guides: Guide[] = [
       "A working session with your own numbers to find your real break-even and a defensible price.",
     category: "Pricing",
     tag: "pricing",
-    timeEstimate: "15 minutes",
+    timeEstimate: "10 minutes",
     difficulty: "Beginner",
     featured: true,
     problem:
@@ -63,32 +63,33 @@ export const guides: Guide[] = [
     slug: "what-do-i-even-say",
     title: "What Do I Even Say?",
     tagline:
-      "Message templates and a decision framework for the follow-up conversations you keep overthinking.",
+      "A five-question messaging system with AI prompts that turn what you already do into words people respond to.",
     category: "Follow-Up",
     tag: "followup",
-    timeEstimate: "15 minutes",
+    timeEstimate: "10 minutes",
     difficulty: "Beginner",
     featured: true,
     problem:
-      "You leave the networking event, the intro call, the DM exchange, meaning to follow up, and then the moment passes because you don't know what to actually say that doesn't feel salesy or awkward.",
+      "You know your business works. You've helped people, created results, and know there's a reason someone chooses you, but when it's time to explain that reason in a message, your words suddenly feel flat.",
     whoItsFor:
-      "Anyone who knows they should be following up more, but the not-knowing-what-to-say is the actual thing stopping them, not a lack of contacts.",
+      "Business owners who can do the work but freeze up when it's time to describe it, whether that's a DM, a follow-up, or an offer that just isn't landing.",
     whatYoullComplete:
-      "A short framework for what a good follow-up message actually contains, plus fill-in-the-blank templates for the five most common situations.",
+      "You'll answer five questions about your business, then use three AI prompts to turn those answers into messages that sound like you, not a swipe file of scripts.",
     whatYoullLeaveWith: [
-      "A follow-up framework you can reuse indefinitely",
-      "Five ready-to-adapt message templates",
-      "A simple system for knowing when to follow up and when to let it go",
+      "Clarity on why people actually choose you over the alternative",
+      "Three AI prompts that turn your own answers into ready-to-use messaging",
+      "Words for your offer that sound like you, not a borrowed template",
     ],
     faqs: [
       {
         question: "Are these generic scripts?",
         answer:
-          "They're structures, not scripts. Each one has a fill-in method so it still sounds like you, not a template.",
+          "No. You answer five questions about your business first, then three AI prompts turn those specific answers into your own messaging, not a fill-in-the-blank template.",
       },
       {
-        question: "Does this cover DMs and email both?",
-        answer: "Yes. The framework is channel-agnostic; the examples cover both.",
+        question: "Do I need to already use AI tools?",
+        answer:
+          "No prior experience needed. The guide gives you the exact prompts to paste into any AI chat tool you already have access to.",
       },
     ],
     gumroadUrl: "https://nobodytaughtushow.gumroad.com/l/basxk",
