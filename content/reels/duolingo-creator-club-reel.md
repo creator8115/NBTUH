@@ -1,5 +1,5 @@
 # Facebook Reel: "$1,000 IN 28 DAYS?"
-**Format:** 9:16 vertical, 1080 × 1920, 30 fps · **Runtime:** ~38 s · **Voice:** your own VO
+**Format:** 9:16 vertical, 1080 × 1920, 30 fps · **Runtime:** ~40 s · **Voice:** your own VO
 **Point of view:** an independent person sharing a listing they found. Not affiliated with Duolingo and not recruiting for it.
 
 ---
@@ -27,27 +27,31 @@
 
 ---
 
-## 1. Voiceover script (~105 words, about 36–39 s at a relaxed pace)
+## 1. Voiceover script (~100 words, about 36–39 s at a relaxed pace)
+
+**Angle: the money isn't the point, the 28 days are.** $1,000 for 28 videos works out to about $35 a video, and saying so up front earns trust. The real hook is the challenge: *could you show up on camera every day for 28 days?* For people who keep saying "I should start posting," this is a paid, coached reason to finally do it.
 
 Read it like you're telling a friend at the kitchen table, not like an announcer. Pauses are marked with `/`.
 
-> **[0:00]** "$1,000 in 28 days?" / *(beat)* That's what stopped my scroll too.
+> **[0:00]** "$1,000 in 28 days?" / *(beat)* Honestly? / The money's not the point.
 >
-> **[0:04]** So I looked it up. / Duolingo, the language app with the little green owl, / has a paid, part-time program called **Duo's Creator Club.**
+> **[0:04]** Duolingo has a paid, part-time program called **Duo's Creator Club.** / **$1,000 for every 28 videos,** posted daily, / plus bonuses for performance.
 >
-> **[0:11]** Here's what it actually says: / **$1,000 for every 28 videos,** posted daily. / Plus bonuses for performance.
+> **[0:12]** Do the math: / that's about thirty-five dollars a video. / Not life-changing.
 >
-> **[0:18]** And this part got me: / **no experience, no degree, no portfolio required.**
+> **[0:16]** Here's the real question: / **could you post every single day / for 28 days?**
 >
-> **[0:23]** But read the fine print. / You'd run new Duolingo-themed TikTok *and* Instagram accounts, / be on camera, / and post every single day.
+> **[0:21]** On camera. / On new TikTok *and* Instagram accounts. / With their team coaching you. / No experience, no degree, no portfolio required.
 >
-> **[0:31]** I don't work for Duolingo. I'm not recruiting. / I just think somebody in my feed needs to see this. / Link's in the caption.
+> **[0:30]** We all say "I should start posting." / This pays you to actually do it.
+>
+> **[0:34]** I don't work for Duolingo, I'm just sharing. / Link's in the caption. / So… could you do it?
 
 **Delivery notes**
-- Line 1: say it like you're reading it off your phone, a little skeptical. Skepticism builds trust with a 35–55 audience that has seen plenty of "make money online" scams.
-- "Here's what it *actually* says": slow down and lean on "actually." That's the turn from rumor to evidence.
-- "No experience, no degree, no portfolio": three beats, almost counting on your fingers. This is the line that makes a 47-year-old who's "not an influencer" lean in.
-- "But read the fine print": your tone drops and gets straight. Being honest about the commitment is what makes this a *recommendation* and not an ad.
+- "The money's not the point": say it flat and honest, almost a shrug. Admitting the obvious ("$35 a video") disarms a 35–55 audience that has seen plenty of "make money online" hype.
+- "Could you post every single day for 28 days?": slow down and look into the lens if you're on camera. This is the hook *inside* the hook.
+- "We all say 'I should start posting'": warm, a little self-aware. This is the line people will see themselves in.
+- End on the question. Don't wrap it up. Questions drive comments, and comments drive Reels reach.
 - Record in a closet or a car for a dry, close sound. Don't add reverb.
 
 ---
@@ -80,18 +84,21 @@ These read as "someone discovered this." Stock footage can't fake it.
 | Time | Visual | Motion / transition | On-screen text | Audio |
 |---|---|---|---|---|
 | **0:00–0:01.5** | Full-screen off-white paper. Black type slams in. | Each word **hard-cuts** on with no ease: "$1,000" (frame 0), "IN 28" (frame 8), "DAYS?" (frame 16). 4% scale overshoot on "DAYS?" then settle. | **$1,000 / IN 28 / DAYS?** (stacked, ~260 px, fills the width) | VO: "$1,000 in 28 days?" Soft paper "thump" SFX on each word. |
-| **0:01.5–0:04** | Same frame. The yellow highlighter swipes left→right behind "$1,000". | Highlighter mask reveal over 10 frames. Slow push-in (100→106%). | Small mono label top-left: `SAW THIS. LOOKED IT UP.` | VO: "That's what stopped my scroll too." |
-| **0:04–0:06** | **Cut** to B-roll A: your hand and phone, listing on screen. | Hard cut on the beat. Handheld is fine. | Mono label: `duolingo.breezy.hr` | VO: "So I looked it up." |
-| **0:06–0:11** | **Screenshot 1: listing header** and the "paid, part-time program" sentence. See Shot 1. | Paper-card drop-in, slow drift, then "Duo's Creator Club" gets underlined. | `DUO'S CREATOR CLUB` · `PAID · PART-TIME` | VO: "…the language app with the little green owl… Duo's Creator Club." |
-| **0:11–0:13** | Black frame, white type. | Hard cut. Text pops on with no animation. **Music drops out.** | **HERE'S WHAT IT** **ACTUALLY** **SAYS** ("ACTUALLY" in red) | VO: "Here's what it actually says:" |
-| **0:13–0:18** | **Screenshot 2: Compensation line**, extreme crop. See Shot 2. | Punch-in zoom, then a yellow highlighter swipe across the compensation sentence. | Big overlay: **$1,000 / EVERY 28 VIDEOS** then `+ PERFORMANCE BONUSES` | VO: "$1,000 for every 28 videos, posted daily. Plus bonuses for performance." Music returns. |
-| **0:18–0:23** | Same screenshot, panned up to the "No professional experience…" sentence. | Vertical pan (12 frames), second highlighter swipe. Each overlay word hard-cuts on with the VO. | **NO EXPERIENCE.** / **NO DEGREE.** / **NO PORTFOLIO.** (stacked, Anton 120 px) | VO: "And this part got me: no experience, no degree, no portfolio required." |
-| **0:23–0:31** | **Screen recording: scroll to "You will…" / "You have…"** See Shot 3. | Real scroll at 1.0–1.25×. Three freeze-frames, each with a red hand-drawn circle. | `THE FINE PRINT:` then `① NEW TIKTOK + INSTAGRAM ACCOUNTS` · `② ON CAMERA` · `③ POST DAILY` (builds one at a time) | VO: "But read the fine print. You'd run new Duolingo-themed TikTok and Instagram accounts, be on camera, and post every single day." |
-| **0:31–0:34** | B-roll C: notebook with the handwritten math, or a plain black card if you skip C. | Hard cut. Slow push-in. | `$1,000 ÷ 28 ≈ $35.71 / VIDEO` then `NOT SPONSORED · NOT AFFILIATED` | VO: "I don't work for Duolingo. I'm not recruiting." |
-| **0:34–0:38** | **Closing screen** (Section 5). | Hard cut, then a text build. | See Section 5 | VO: "I just think somebody in my feed needs to see this. Link's in the caption." |
-| **0:38–0:39** | Hold the closing screen. | No movement. Gives a looping viewer time to read. | — | Room tone only |
+| **0:01.5–0:04** | Same frame. A red strikethrough draws across "$1,000". | Red `#E0352B` 12 px line draws left→right over 8 frames, slightly off-level (-2°). Slow push-in (100→106%). | Mono label beneath: `THE MONEY'S NOT THE POINT.` | VO: "Honestly? The money's not the point." |
+| **0:04–0:08** | **Screenshot 1: listing header** and the "paid, part-time program" sentence. See Shot 1. | Paper-card drop-in, slow drift, then "Duo's Creator Club" gets underlined. | `DUO'S CREATOR CLUB` · `PAID · PART-TIME` | VO: "Duolingo has a paid, part-time program called Duo's Creator Club." |
+| **0:08–0:12** | **Screenshot 2a: Compensation line**, extreme crop. See Shot 2. | Punch-in zoom, then a yellow highlighter swipe. | **$1,000 / EVERY 28 VIDEOS** then `+ PERFORMANCE BONUSES` | VO: "$1,000 for every 28 videos, posted daily, plus bonuses for performance." |
+| **0:12–0:16** | B-roll C: notebook, your hand writing "$1,000 ÷ 28 = $35.71" (or a black card with the math typed on). | Hard cut. Real-time handwriting, or a typewriter reveal of the type. | `≈ $35 / VIDEO` · `NOT LIFE-CHANGING.` | VO: "Do the math: that's about thirty-five dollars a video. Not life-changing." |
+| **0:16–0:21** | **The 28-day grid** (see "Grid motif" below). Black background, 28 empty boxes. | Hard cut. **Music drops out.** Boxes tick ✓ one by one, fast (2 frames each), accelerating. | **COULD YOU POST / EVERY DAY / FOR 28 DAYS?** above the grid | VO: "Here's the real question: could you post every single day for 28 days?" Soft pen-tick SFX on the first few boxes, then a blur of ticks. |
+| **0:21–0:30** | **Screen recording: scroll the listing.** See Shot 3. | Real scroll at 1.0–1.25×. Freeze-frames with red hand-drawn circles. Music returns. | `① ON CAMERA` · `② NEW TIKTOK + INSTAGRAM` · `③ COACHING INCLUDED` then **NO EXPERIENCE. NO DEGREE. NO PORTFOLIO.** | VO: "On camera. On new TikTok and Instagram accounts. With their team coaching you. No experience, no degree, no portfolio required." |
+| **0:30–0:34** | B-roll A: your hand setting the phone up on a stack of books or a tripod, recording light on. | Hard cut. Natural handheld. | `WE ALL SAY "I SHOULD START POSTING."` then `THIS PAYS YOU TO DO IT.` | VO: "We all say 'I should start posting.' This pays you to actually do it." |
+| **0:34–0:39** | **Closing screen** (Section 5). | Hard cut, then a text build. | See Section 5 | VO: "I don't work for Duolingo, I'm just sharing. Link's in the caption. So… could you do it?" |
+| **0:39–0:40** | Hold the closing screen. | No movement. Gives a looping viewer time to read. | — | Room tone only |
 
-**Music:** optional. If you use it, pick a sparse lo-fi or soul-sample instrumental at -24 dB under the VO, from Facebook's licensed library in the Reels editor. Cut it to silence for one second at 0:11 ("Here's what it actually says"). That gap is your strongest attention reset.
+**Grid motif (the visual signature of this Reel):** a 4 × 7 grid of 28 squares, each 120 × 120 px with a 3 px off-white stroke and 18 px gaps. That makes the grid ~930 px wide, centered at x = 540, y = 1000. Mark each "day" with a hand-drawn yellow ✓, not a clean vector check. It reads as a calendar on the fridge, not a UI. The grid appears again, **empty**, on the closing screen.
+
+**Music:** optional. If you use it, pick a sparse lo-fi or soul-sample instrumental at -24 dB under the VO, from Facebook's licensed library in the Reels editor. Cut it to silence at 0:16 ("Here's the real question"). That gap is your strongest attention reset.
+
+> **Shot timing updates:** Shot 1 now runs 0:04–0:08. Shot 2a (Compensation) runs 0:08–0:12. Shot 2b ("No professional experience…") is folded into Shot 3 at ~0:27. Shot 3 freeze-frames, in order: "appear on camera" → "accounts on both platforms are required" → "coaching from Duolingo's Creator Club team" → "No professional experience, degree, or portfolio is required." Each freeze is ~0.7 s.
 
 ---
 
@@ -142,25 +149,27 @@ The "Compensation" line and the "No professional experience…" sentence are a f
 
 ---
 
-## 5. Closing screen (0:34–0:39)
+## 5. Closing screen (0:34–0:40)
 
 **Background:** ink black `#111111` with grain. **Layout** (all inside the safe zone):
 
 ```
-y=380   READ IT                  ← Anton 170 px, off-white
-y=560   YOURSELF.                ← Anton 170 px, off-white
-y=760   ───────────────          ← 4 px yellow rule, 300 px wide
-y=840   $1,000 / 28 VIDEOS       ← Plex Mono 54 px, yellow #F5FF4F
-y=920   + performance bonuses    ← Plex Mono 40 px, 70% white
-y=990   no experience required   ← Plex Mono 40 px, 70% white
-y=1120  LINK IN CAPTION ↓        ← Plex Mono 46 px, off-white, slow 2-cycle pulse (100→60% opacity)
+y=300   COULD YOU                ← Anton 150 px, off-white
+y=450   DO IT?                   ← Anton 150 px, yellow #F5FF4F
+y=620   ┌─┬─┬─┬─┬─┬─┬─┐
+        ├─┼─┼─┼─┼─┼─┼─┤          ← the 28-day grid, EMPTY, scaled to 80% (~745 px wide)
+        ├─┼─┼─┼─┼─┼─┼─┤             centered x=540, top at y=620
+        └─┴─┴─┴─┴─┴─┴─┘
+y=1020  DAY 1 → ☐                ← Plex Mono 46 px, off-white. The first box gently pulses.
+y=1140  $1,000 / 28 videos + bonuses · link in caption ↓
+                                 ← Plex Mono 34 px, 70% white
 y=1320  Not affiliated with Duolingo. Just sharing what I found.
-                                 ← Plex Mono 30 px, 60% white
+                                 ← Plex Mono 28 px, 60% white
 ```
 
-**Build:** "READ IT" hard-cuts on with the VO line, "YOURSELF." follows 6 frames later, and the yellow rule draws on over 8 frames. The rest fades in together over 6 frames. Hold for at least 2 seconds with nothing moving except the "LINK" pulse.
+**Build:** "COULD YOU" hard-cuts on, and "DO IT?" follows 6 frames later. The empty grid fades in over 8 frames, and the rest fades in together. Only the **first box** pulses (stroke 100→50% opacity, 2 slow cycles). Nothing else moves. Hold for at least 2 seconds.
 
-**Why this closer:** "Read it yourself" puts the decision in the viewer's hands. That's the opposite of a hard sell, and it's the line people will remember and repeat in comments.
+**Why this closer:** the empty grid turns the viewer's own month into the question. It's a challenge rather than a sales pitch, and it invites the comment "Day 1" (see the caption).
 
 ---
 
@@ -169,17 +178,15 @@ y=1320  Not affiliated with Duolingo. Just sharing what I found.
 Keep every overlay to **3–5 words** so it can be read in under a second.
 
 1. **$1,000 / IN 28 / DAYS?** (hook, unchanged)
-2. `SAW THIS. LOOKED IT UP.`
+2. ~~$1,000~~ `THE MONEY'S NOT THE POINT.`
 3. `DUO'S CREATOR CLUB` · `PAID · PART-TIME`
-4. **HERE'S WHAT IT ACTUALLY SAYS**
-5. **$1,000 / EVERY 28 VIDEOS**
-6. `+ PERFORMANCE BONUSES`
-7. **NO EXPERIENCE. / NO DEGREE. / NO PORTFOLIO.**
-8. `THE FINE PRINT:`
-9. `① NEW TIKTOK + INSTAGRAM ACCOUNTS` · `② ON CAMERA` · `③ POST DAILY`
-10. `$1,000 ÷ 28 ≈ $35.71 / VIDEO`
-11. `NOT SPONSORED · NOT AFFILIATED`
-12. **READ IT YOURSELF.** / `LINK IN CAPTION ↓`
+4. **$1,000 / EVERY 28 VIDEOS** · `+ PERFORMANCE BONUSES`
+5. `≈ $35 / VIDEO` · `NOT LIFE-CHANGING.`
+6. **COULD YOU POST / EVERY DAY / FOR 28 DAYS?** (over the grid)
+7. `① ON CAMERA` · `② NEW TIKTOK + INSTAGRAM` · `③ COACHING INCLUDED`
+8. **NO EXPERIENCE. NO DEGREE. NO PORTFOLIO.**
+9. `WE ALL SAY "I SHOULD START POSTING."` → `THIS PAYS YOU TO DO IT.`
+10. **COULD YOU DO IT?** · `DAY 1 → ☐` · `NOT AFFILIATED WITH DUOLINGO`
 
 Also turn on **auto-captions** in the Facebook Reels editor. Many people in this age group watch with the sound off.
 
@@ -187,27 +194,28 @@ Also turn on **auto-captions** in the Facebook Reels editor. Many people in this
 
 ## 7. Facebook caption
 
-> $1,000 in 28 days? I had to see it for myself. 👀
+> $1,000 in 28 days? Honestly, the money's not the point. 👀
 >
-> Duolingo (yes, the language app with the green owl) has a paid, part-time program called **Duo's Creator Club**. The listing says it pays **$1,000 USD for every 28 videos (posted daily), plus bonuses for performance.**
+> Duolingo (yes, the green owl app) has a paid, part-time program called **Duo's Creator Club**. The listing says **$1,000 USD for every 28 videos (posted daily), plus bonuses for performance.** That's about $35 a video. Not life-changing.
 >
-> The part that got me: **no professional experience, degree, or portfolio required.** Just a smartphone and reliable internet.
+> But think about what it really asks: **show up on camera every single day for 28 days.** How many of us have said "I should start posting" and never did? This pays you, and coaches you, to actually do it.
 >
-> The fine print, so you know what you're signing up for:
-> ✔️ You run *new*, Duolingo-themed TikTok **and** Instagram accounts (both are required)
-> ✔️ You appear on camera
-> ✔️ You post a video every single day
-> ✔️ You get coaching and feedback from their Creator Club team
+> What you'd be signing up for:
+> ✔️ New, Duolingo-themed TikTok **and** Instagram accounts (both required)
+> ✔️ Being on camera
+> ✔️ A new video every day
+> ✔️ Coaching and feedback from their Creator Club team
+> ✔️ No professional experience, degree, or portfolio required
 >
-> I'm not affiliated with Duolingo and I'm not recruiting. I just came across it and figured somebody in my feed could use it. Read the full listing and see if it fits your life.
+> I'm not affiliated with Duolingo and I'm not recruiting. I just came across it and figured somebody in my feed needed the push. Read the full listing and see if it fits your life.
 >
 > 🔗 Official listing: **[APPLICATION LINK]**
 >
 > Reminder: never pay anyone to "get you in." Apply only through the official listing.
 >
-> Tag somebody who's always on their phone anyway. 😄
+> **Could you do 28 days straight? Comment "DAY 1" if you're in.** 👇
 >
-> #CreatorOpportunity #SideIncome #Duolingo #ContentCreator #OverFortyAndCreating #ReadTheFinePrint
+> #CreatorOpportunity #SideIncome #Duolingo #ContentCreator #OverFortyAndCreating #28DayChallenge #ReadTheFinePrint
 
 ---
 
