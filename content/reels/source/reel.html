@@ -1,0 +1,165 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Anton;src:url(fonts/anton-latin-400-normal.woff2)}
+@font-face{font-family:Plex;font-weight:400;src:url(fonts/ibm-plex-mono-latin-400-normal.woff2)}
+@font-face{font-family:Plex;font-weight:500;src:url(fonts/ibm-plex-mono-latin-500-normal.woff2)}
+@font-face{font-family:Plex;font-weight:700;src:url(fonts/ibm-plex-mono-latin-700-normal.woff2)}
+:root{--paper:#F2EEE6;--ink:#111;--hi:#F5FF4F;--red:#E0352B}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--ink)}
+#stage{position:absolute;inset:0;overflow:hidden}
+.scene{position:absolute;inset:0;transform-origin:50% 45%}
+.paper{background:var(--paper);color:var(--ink)}
+.dark{background:var(--ink);color:var(--paper)}
+.a{position:absolute;left:70px}
+.H{font-family:Anton;text-transform:uppercase;line-height:.92;letter-spacing:-.01em}
+.M{font-family:Plex;font-weight:500;letter-spacing:.01em}
+.hl{position:absolute;background:var(--hi);mix-blend-mode:multiply;transform:skewX(-8deg)}
+.ph{position:absolute;border:4px dashed #8a857c;display:flex;align-items:center;justify-content:center;text-align:center;
+  font-family:Plex;font-weight:700;color:#5c584f;font-size:30px;line-height:1.35;padding:30px;box-sizing:border-box;
+  background:repeating-linear-gradient(-45deg,#e3ded3 0 22px,#ebe7de 22px 44px)}
+.dark .ph{border-color:#666;color:#bbb;background:repeating-linear-gradient(-45deg,#1d1d1d 0 22px,#262626 22px 44px)}
+#grain{position:absolute;inset:-200px;pointer-events:none;opacity:.07;mix-blend-mode:overlay}
+#vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(0,0,0,.28) 100%)}
+.box{position:absolute;width:104px;height:104px;border:3px solid rgba(242,238,230,.85);box-sizing:border-box}
+.tick{position:absolute;inset:10px;color:var(--hi);font-family:Anton;font-size:96px;line-height:80px;text-align:center}
+</style></head>
+<body>
+<div id="stage"></div>
+<svg id="grain" width="1480" height="2320"><filter id="n"><feTurbulence id="turb" type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="1"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+<div id="vig"></div>
+<script>
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const p=(t,s,d)=>cl((t-s)/d);                 // progress 0..1
+const eo=x=>1-Math.pow(1-x,3);                 // ease-out
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const on=(t,s)=>t>=s?1:0;                      // hard cut
+const st=s=>s;
+
+// highlighter swipe: returns style for width reveal
+const hl=(x,y,w,h,prog)=>`<div class="hl" style="left:${x}px;top:${y}px;width:${w*eo(prog)}px;height:${h}px;opacity:${prog>0?.9:0}"></div>`;
+
+function hook(t){ // 0–4
+  const sc=1+.06*(t/4);
+  const strike=eo(p(t,1.5,.27));
+  return `<div class="scene paper" style="transform:scale(${sc})">
+   <div class="a H" style="top:300px;font-size:300px;opacity:${on(t,0)}">$1,000
+     <div style="position:absolute;left:-10px;top:150px;height:22px;background:var(--red);width:${720*strike}px;transform:rotate(-3deg)"></div></div>
+   <div class="a H" style="top:590px;font-size:300px;opacity:${on(t,.27)}">IN 28</div>
+   <div class="a H" style="top:880px;font-size:300px;opacity:${on(t,.53)};transform-origin:left;transform:scale(${t<.53?1:1+.04*(1-eo(p(t,.53,.2)))})">DAYS?</div>
+   <div class="a M" style="top:1230px;font-size:46px;opacity:${on(t,1.8)}">THE MONEY'S NOT THE POINT.</div>
+  </div>`;
+}
+function header(t){ // 4–8
+  const d=eo(p(t,0,.27));
+  const y=760+60*d, rot=-6+4*d, sc=1+.04*(t/4);
+  const ul=eo(p(t,2.2,.27));
+  return `<div class="scene paper">
+   <div class="a M" style="top:260px;font-size:36px;opacity:.7">SAW THIS. LOOKED IT UP.</div>
+   <div class="ph" style="left:90px;top:${y-300}px;width:900px;height:560px;opacity:${d};transform:rotate(${rot}deg) scale(${sc});box-shadow:0 18px 40px rgba(0,0,0,.35)">
+     DROP IN:<br>SCREENSHOT 1<br>listing title + "paid, part-time program"<br>(900px wide, -2°)</div>
+   <div class="a H" style="top:1090px;font-size:120px">DUO'S CREATOR CLUB
+     <div style="height:10px;background:var(--ink);width:${820*ul}px;margin-top:8px"></div></div>
+   <div class="a M" style="top:1260px;font-size:44px;opacity:${on(t,.8)}">PAID · PART-TIME</div>
+  </div>`;
+}
+function comp(t){ // 8–12
+  const pin=1.15-.15*eo(p(t,0,.2));
+  const band=eo(p(t,.6,.3));
+  return `<div class="scene paper">
+   <div style="position:absolute;left:0;top:420px;width:1080px;transform:scale(${pin});transform-origin:50% 50%">
+     <div class="ph" style="position:relative;left:0;top:0;width:1080px;height:300px">DROP IN: SCREENSHOT 2a<br>"Compensation: $1,000 USD for every 28 videos<br>(posted daily), plus bonuses for performance"</div>
+     ${hl(60,70,900,70,p(t,.2,.33))}
+     ${hl(60,190,560,60,p(t,2.4,.3))}
+   </div>
+   <div style="position:absolute;left:0;top:${860+100*(1-band)}px;width:1080px;opacity:${band};background:var(--ink);padding:40px 70px;box-sizing:border-box">
+     <div class="H" style="font-size:150px;color:var(--paper)">$1,000</div>
+     <div class="H" style="font-size:110px;color:var(--hi)">EVERY 28 VIDEOS</div>
+   </div>
+   <div class="a M" style="top:1330px;font-size:46px;opacity:${on(t,2.4)}">+ PERFORMANCE BONUSES</div>
+  </div>`;
+}
+function math(t){ // 12–16
+  const s="$1,000 ÷ 28 = $35.71";
+  const n=Math.floor(cl(t/1.2)*s.length);
+  return `<div class="scene dark" style="transform:scale(${1+.04*t/4})">
+   <div class="a M" style="top:420px;font-size:64px;color:#bbb">${s.slice(0,n)}<span style="opacity:${(t*2|0)%2?0:1}">▍</span></div>
+   <div class="a H" style="top:620px;font-size:250px;opacity:${on(t,1.3)}">≈ $35</div>
+   <div class="a H" style="top:860px;font-size:150px;opacity:${on(t,1.3)}">/ VIDEO</div>
+   <div class="a H" style="top:1120px;font-size:120px;color:var(--red);opacity:${on(t,2.2)}">NOT LIFE-<br>CHANGING.</div>
+  </div>`;
+}
+function grid(t){ // 16–21
+  // ticks accelerate: tick i at time ti
+  let boxes='';
+  for(let i=0;i<28;i++){
+    const r=Math.floor(i/7),c=i%7;
+    const ti=.8+3.4*Math.pow(i/27,.62);
+    const x=72+c*(104+18), y=820+r*(104+18);
+    const v=t>=ti;
+    boxes+=`<div class="box" style="left:${x}px;top:${y}px">${v?`<div class="tick" style="transform:rotate(${(i*37%11)-5}deg) scale(${1+.3*(1-eo(p(t,ti,.12)))})">✓</div>`:''}</div>`;
+  }
+  return `<div class="scene dark">
+   <div class="a H" style="top:280px;font-size:150px">COULD YOU POST</div>
+   <div class="a H" style="top:430px;font-size:150px;color:var(--hi)">EVERY DAY</div>
+   <div class="a H" style="top:580px;font-size:150px">FOR 28 DAYS?</div>
+   ${boxes}
+   <div class="a M" style="top:1340px;font-size:40px;color:#bbb">DAY ${Math.min(28,1+Math.floor(28*Math.pow(cl((t-.8)/3.4),1/.62)))} / 28</div>
+  </div>`;
+}
+function fine(t){ // 21–30
+  const scroll=-Math.min(9,t)*55;
+  const items=[["① ON CAMERA",.3],["② NEW TIKTOK + INSTAGRAM",2.2],["③ COACHING INCLUDED",4.0]];
+  const big=t>=6;
+  let ov='';
+  if(!big) items.forEach(([s,a],k)=>{ if(t>=a) ov+=`<div class="M" style="font-size:44px;background:var(--ink);color:var(--paper);display:inline-block;padding:10px 18px;margin-bottom:14px;transform:translateY(${20*(1-eo(p(t,a,.2)))}px)">${s}</div><br>`;});
+  const circ=[.3,2.2,4.0].map(a=>t>=a&&t<a+1.6?`<svg style="position:absolute;left:170px;top:${560+[.3,2.2,4.0].indexOf(a)*140}px" width="740" height="150"><ellipse cx="370" cy="75" rx="350" ry="62" fill="none" stroke="#E0352B" stroke-width="8" stroke-dasharray="1700" stroke-dashoffset="${1700*(1-eo(p(t,a,.33)))}" transform="rotate(-2 370 75)"/></svg>`:'').join('');
+  return `<div class="scene paper">
+   <div style="position:absolute;left:130px;top:150px;width:820px;height:1640px;border:6px solid var(--ink);border-radius:60px;overflow:hidden;box-sizing:border-box;filter:${big?'brightness(.45)':'none'}">
+     <div class="ph" style="position:absolute;left:0;top:${scroll}px;width:808px;height:2400px;border:none;align-items:flex-start;padding-top:420px">
+       DROP IN:<br>SCREEN RECORDING<br>scroll the official listing<br>(1.0–1.25× speed)<br><br>freeze + circle:<br>"appear on camera"<br>"accounts on both platforms are required"<br>"coaching from Duolingo's Creator Club team"<br>"No professional experience, degree,<br>or portfolio is required"</div>
+   </div>
+   
+   <div class="a" style="top:1150px">${ov}</div>
+   ${big?`<div style="position:absolute;inset:0;background:rgba(17,17,17,.82)"></div><div class="H" style="position:absolute;left:70px;width:940px;top:560px;font-size:124px;color:var(--paper);white-space:nowrap">
+      <div style="opacity:${on(t,6)}">NO EXPERIENCE.</div>
+      <div style="opacity:${on(t,6.6)}">NO DEGREE.</div>
+      <div style="opacity:${on(t,7.2)};color:var(--hi)">NO PORTFOLIO.</div></div>`:''}
+  </div>`;
+}
+function posting(t){ // 30–34
+  return `<div class="scene paper" style="transform:scale(${1+.04*t/4})">
+   <div class="a M" style="top:420px;font-size:48px;line-height:1.35;opacity:${on(t,.15)}">WE ALL SAY<br>"I SHOULD START<br>POSTING."</div>
+   <div class="a H" style="top:820px;font-size:190px;opacity:${on(t,1.9)}">THIS PAYS</div>
+   <div class="a H" style="top:1000px;font-size:190px;opacity:${on(t,2.1)}">YOU TO</div>
+   <div class="a H" style="top:1180px;font-size:190px;opacity:${on(t,2.3)};position:absolute">
+     <span style="position:relative;z-index:1">DO IT.</span>
+     <div class="hl" style="left:-10px;top:60px;height:120px;width:${520*eo(p(t,2.5,.3))}px"></div></div>
+  </div>`;
+}
+function close(t){ // 34–40
+  const f=eo(p(t,.4,.27));
+  let boxes='';
+  const s=.8, w=104*s, g=18*s, x0=540-(7*w+6*g)/2;
+  const pulse=.5+.5*Math.cos(Math.max(0,t-.8)*Math.PI*1.3);
+  for(let i=0;i<28;i++){const r=Math.floor(i/7),c=i%7;
+    boxes+=`<div class="box" style="left:${x0+c*(w+g)}px;top:${640+r*(w+g)}px;width:${w}px;height:${w}px;opacity:${i===0?.35+.65*pulse:1}${i===0?';border-color:var(--hi)':''}"></div>`;}
+  return `<div class="scene dark">
+   <div class="a H" style="top:280px;font-size:160px;opacity:${on(t,0)}">COULD YOU</div>
+   <div class="a H" style="top:440px;font-size:160px;color:var(--hi);opacity:${on(t,.2)}">DO IT?</div>
+   <div style="opacity:${f}">${boxes}
+   <div class="a M" style="top:1080px;font-size:46px">DAY 1 → <span style="color:var(--hi)">☐</span></div>
+   <div class="a M" style="top:1180px;font-size:32px;opacity:.75">$1,000 / 28 videos + bonuses<br>link in caption ↓</div>
+   <div class="a M" style="top:1340px;font-size:26px;opacity:.6">Not affiliated with Duolingo.<br>Just sharing what I found.</div></div>
+  </div>`;
+}
+const SCENES=[[0,4,hook],[4,8,header],[8,12,comp],[12,16,math],[16,21,grid],[21,30,fine],[30,34,posting],[34,40,close]];
+window.render=function(t){
+  const s=SCENES.find(([a,b])=>t>=a&&t<b)||SCENES[SCENES.length-1];
+  document.getElementById('stage').innerHTML=s[2](t-s[0]);
+  const fr=Math.floor(t*30);
+  document.getElementById('turb').setAttribute('seed',fr%17);
+  document.getElementById('grain').style.transform=`translate(${(fr*37)%140-70}px,${(fr*53)%140-70}px)`;
+};
+window.DURATION=40;
+</script></body></html>
